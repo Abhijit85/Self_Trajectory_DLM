@@ -1,0 +1,22 @@
+stage,detail,count
+identification,arXiv (cs.CL/cs.LG),512
+identification,Semantic Scholar (CS 2021-2026),318
+identification,OpenReview (ICLR/NeurIPS/ICML/*ACL),104
+identification,ACL Anthology (full-text),96
+identification,IEEE Xplore (metadata+abstract),47
+identification,ACM Digital Library,43
+identification,TOTAL raw records,1120
+deduplication,unique records after dedup,803
+screening,excluded at title/abstract (IC1-IC3),712
+screening,retained for full-text retrieval,91
+fulltext_exclusion,not a diffusion/flow text model (EC1/EC2),21
+fulltext_exclusion,no self-feedback/trajectory relevance,19
+fulltext_exclusion,image/audio/video diffusion only (EC1),12
+fulltext_exclusion,non-archival or superseded (EC3/EC4),14
+fulltext_exclusion,full text unavailable,3
+fulltext_exclusion,out-of-scope application,5
+fulltext_exclusion,TOTAL excluded at full text,74
+inclusion,included from search,17
+inclusion,added by backward/forward snowballing,6
+inclusion,added by April-2026 corpus refresh (SCMDM),1
+inclusion,FINAL primary studies,24

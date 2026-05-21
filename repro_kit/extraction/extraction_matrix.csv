@@ -1,0 +1,25 @@
+study,cluster,tsf_form,operator_family,key_metrics,central_hidden_assumption,blind_spot,open_problems,QA1_aims,QA2_mechanism_defined,QA3_ablation,QA4_repro,QA5_faithfulness,QA6_correction,QA7_family_scope,QA8_threats,QA_total
+D3PM,C1,None,none,PPL,independent-step optimality suffices,no correction or faithfulness,OP2,1,1,0.5,1,0,0,0.5,1,5.0
+DiffuSeq,C1,None,none,"BLEU, diversity",independent-step optimality suffices,no correction or faithfulness,OP2;OP3,1,0.5,0.5,1,0,0,1,1,5.0
+SEDD,C1,None,none,PPL,independent-step optimality suffices,no correction or faithfulness,OP2,1,1,0.5,1,0,0,1,1,5.5
+MDLM,C1,None (declined),none,PPL,independent-step optimality suffices,no correction or faithfulness,OP2;OP3,1,1,1,1,0,0,1,1,6
+LLaDA,C1,Optional remask,none,NLU acc.,independent-step optimality suffices,no correction or faithfulness,OP2;OP7,1,1,0.5,1,0,0,1,1,5.5
+Analog Bits,C2,PSC,PSC,FID/quality,quality gains imply reliable feedback,no hallucination/correction,OP1;OP2,1,1,1,1,0,0,0.5,1,5.5
+TESS,C2,PSC (simplex),PSC,"BLEU, ROUGE",quality gains imply reliable feedback,no hallucination/correction,OP1;OP6,1,1,0.5,1,0,0,1,1,5.5
+TREC,C2,RRC,RRC,"BLEU, MAUVE",quality gains imply reliable feedback,seq2seq only; correction unstudied,OP3,1,1,1,1,0,0,1,1,6
+FastDiSS,C2,PSC (few-step),PSC,"GenPPL, speed",quality gains imply reliable feedback,degrades few-step; no faithfulness,OP2;OP3,1,1,0.5,1,0,0,1,1,5.5
+Soft-Masked,C2,PSC sub-type,PSC-sub,PPL (iso-compute),removing hard commitment improves gen.,discrete only; no faithfulness,OP2;OP7,1,1,1,1,0,0,0.5,1,5.5
+SCMDM,C2,PSC (post-train),PSC,GenPPL (OWT),training regime governs PSC outcome,discrete only; no faithfulness,OP2;OP3,1,1,1,1,0,0,1,1,6
+P2,C3,CPS,CPS,"pass@k, foldability",better paths imply better outputs,no faithfulness analysis,OP3;OP6,1,1,1,1,0,0,1,1,6
+PAPL,C3,CPS (P-ELBO),CPS,"MAUVE, GenPPL",better paths imply better outputs,no faithfulness analysis,OP3;OP6,1,1,1,1,0,0,1,1,6
+CDLM,C4,CTF,CTF,code revision (CRB),synthetic correction transfers broadly,no naturalistic halluc.; discrete only,OP4;OP6,1,1,1,1,0,1,0.5,1,6.5
+ProSeCo,C4,CTF,CTF,"GSM8K, code",synthetic correction transfers broadly,no naturalistic halluc.; discrete only,OP4;OP6,1,1,1,1,0,1,0.5,1,6.5
+PRISM,C4,CTF,CTF,provable correction,synthetic correction transfers broadly,no naturalistic halluc.; discrete only,OP4;OP6,1,1,0.5,1,0,1,0.5,1,6.0
+TraceDet,C5,None varied,none,AUROC,default trajectories reveal all failures,no TSF intervention,OP5;OP6,1,1,0.5,1,1,0,1,1,6.5
+DynHD,C5,None varied,none,"AUROC, entropy",default trajectories reveal all failures,no TSF intervention,OP5;OP6,1,1,0.5,1,1,0,1,1,6.5
+Lost-in-Diffusion,C5,None varied,none,halluc. rate,default trajectories reveal all failures,no TSF intervention,OP5;OP6,1,1,0.5,1,1,0,1,1,6.5
+LangFlow,C6,PSC,PSC,"PPL, MAUVE",quality metrics capture reliability,no CCap/CI/halluc.; no discrete comp.,OP7,1,1,1,1,0,0,1,1,6
+RDLM,C6,PSC,PSC,PPL,quality metrics capture reliability,no CCap/CI/halluc.,OP7,1,1,0.5,1,0,0,1,1,5.5
+FLM/FMLM,C6,Flow map,flow,"PPL, speed",quality metrics capture reliability,no CCap/CI/halluc.,OP7,1,1,0.5,1,0,0,0.5,1,5.0
+DLM-One,C6,Flow map,flow,"PPL, 1-step speed",quality metrics capture reliability,no CCap/CI/halluc.,OP7,1,0.5,0.5,1,0,0,1,1,5.0
+LDDM,C7,PSC / latent,PSC,PPL,removing commitment improves gen.,no faithfulness/correction test,OP2;OP7,1,1,0.5,1,0,0,1,1,5.5

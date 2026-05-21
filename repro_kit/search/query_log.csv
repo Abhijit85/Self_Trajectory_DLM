@@ -1,0 +1,17 @@
+library,exact_query_string,date_run,raw_hits,export_file,notes
+arXiv,"REPLACE: exact string actually submitted to the arXiv API/UI",YYYY-MM-DD,,search/exports/arxiv.bib,"cs.CL + cs.LG; record API URL or UI query verbatim"
+Semantic Scholar,"REPLACE: exact API query + filters",YYYY-MM-DD,,search/exports/semanticscholar.json,"Computer Science; year 2021-2026; paste the API request"
+OpenReview,"REPLACE: exact query",YYYY-MM-DD,,search/exports/openreview.csv,"venues: ICLR/NeurIPS/ICML/*ACL 2021-2026"
+ACL Anthology,"REPLACE: exact query",YYYY-MM-DD,,search/exports/acl.bib,"full-text search"
+IEEE Xplore,"REPLACE: exact query",YYYY-MM-DD,,search/exports/ieee.csv,"metadata + abstract field"
+ACM Digital Library,"REPLACE: exact query",YYYY-MM-DD,,search/exports/acm.bib,"metadata + abstract"
+,,,,,
+# STAGE TOTALS (fill after running the funnel),,,,,
+# raw total (sum of raw_hits above),,,1120,,"<- replace with real sum"
+# unique after deduplication,,,803,,"<- replace"
+# excluded at title/abstract,,,712,,"<- replace"
+# retained for full-text,,,91,,"<- replace"
+# excluded at full-text,,,74,,"<- replace; itemize reasons in screening_sheet.csv"
+# included from search,,,17,,"<- replace"
+# added by snowballing,,,6,,"<- replace"
+# FINAL corpus,,,24,,"<- replace"

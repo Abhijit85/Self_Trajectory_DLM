@@ -1,0 +1,19 @@
+record_id,title,authors,year,source_library,doi_or_arxiv_id,duplicate_of,ta_decision,ta_screener1,ta_screener2,fulltext_decision,exclusion_reason,exclusion_code,included_final,added_by,notes
+R0001,"EXAMPLE: paste real record title",,2025,arXiv,arXiv:2xxx.xxxxx,,include,include,include,include,,,"yes",search,"example row — delete"
+R0002,"EXAMPLE: image-only diffusion paper",,2024,IEEE Xplore,10.1109/xxxx,,exclude,exclude,exclude,,image/audio/video diffusion only,EC1,"no",,"excluded at T/A"
+R0003,"EXAMPLE: superseded preprint v1",,2025,Semantic Scholar,arXiv:2yyy.yyyyy,R0017,,,,,,EC4,"no",,"duplicate of R0017"
+# ----------------------------------------------------------------------------------------
+# COLUMN GUIDE
+# ta_decision        : include | exclude   (title/abstract stage, against IC1-IC3)
+# ta_screener1/2     : each rater's independent T/A decision (for kappa)
+# fulltext_decision  : include | exclude   (only for rows that passed T/A)
+# exclusion_reason   : free text; must match one of the codes below
+# exclusion_code     : EC1 image/audio/video only | EC2 purely AR (no DLM) |
+#                      EC3 non-archival/tutorial/blog | EC4 superseded/duplicate |
+#                      EC5 survey (-> related work) | NA not-a-DLM | NR no self-feedback/traj |
+#                      UNAVAIL full text unavailable | OOS out-of-scope application
+# included_final     : yes | no
+# added_by           : search | snowball_backward | snowball_forward | refresh
+# ----------------------------------------------------------------------------------------
+# The per-reason counts at full-text feed Table 6 (exclusion breakdown) and Figure 1 (PRISMA).
+# The ta_screener1 vs ta_screener2 columns feed the screening-agreement kappa.
