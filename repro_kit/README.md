@@ -1,4 +1,4 @@
-# AI Cross-Check Outputs
+# Cross-Check Outputs
 
 These files provide a complete review workflow scenario.
 
