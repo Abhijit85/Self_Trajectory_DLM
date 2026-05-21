@@ -12,15 +12,17 @@ independent quality-rating work has been completed.
 
 Known fields still to complete:
 
-- `repro_kit/search/query_log.csv` contains one saved Semantic Scholar run;
-  arXiv was rate-limited on 2026-05-21, and OpenReview, ACL Anthology, IEEE
-  Xplore, and ACM Digital Library still require manual/API exports.
-- `repro_kit/screening/screening_sheet.csv` contains fetched unscreened records
-  from saved exports; two independent title/abstract decisions are still needed.
+- `repro_kit/search/query_log.csv` records the current failed public/API run:
+  arXiv failed after retry/backoff and Semantic Scholar per-phrase search was
+  blocked by HTTP 429 on 2026-05-21.
+- OpenReview, ACL Anthology, IEEE Xplore, and ACM Digital Library still require
+  manual or authenticated exports.
+- `repro_kit/screening/screening_sheet.csv` has no screenable records until
+  valid exports are saved.
 - `repro_kit/quality/qa_rater1.csv` and `repro_kit/quality/qa_rater2.csv`
-  contain illustrative rater scores.
-- `repro_kit/extraction/extraction_matrix.csv` contains worked-template
-  extraction and QA values.
+  are empty until two real independent ratings are entered.
+- `repro_kit/extraction/extraction_matrix.csv` is empty until consensus
+  extraction is completed for genuinely included papers.
 
 ## Repository Contents
 
@@ -44,6 +46,11 @@ The main audit trail is in [`repro_kit/`](repro_kit/):
   draft PRISMA checklist PDF.
 - [`scripts/run_searches.py`](scripts/run_searches.py): public/API search runner
   for sources that can be queried without a manual export.
+- [`repro_kit/search/manual_export_instructions.md`](repro_kit/search/manual_export_instructions.md):
+  exact instructions for the four sources that require manual or authenticated
+  exports.
+- [`repro_kit/crosscheck_outputs/`](repro_kit/crosscheck_outputs/): AI
+  cross-check outputs for format validation and human-reviewer comparison only.
 
 ## Auditing The Central Claim
 

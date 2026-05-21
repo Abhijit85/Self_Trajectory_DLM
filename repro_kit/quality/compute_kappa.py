@@ -66,8 +66,11 @@ def main():
         # accept either 'QA1'..'QA8' headers or the long names; map by prefix
         def load(path):
             with open(path, newline='') as fh:
-                return list(csv.DictReader(fh))
+                return [r for r in csv.DictReader(fh)
+                        if r.get('study', '') and not r['study'].startswith('#')]
         r1, r2 = load(f1), load(f2)
+        if not r1 or not r2:
+            sys.exit("No QA rows found in one or both rater files.")
         print(f"QA agreement over n={min(len(r1),len(r2))} studies (quadratic-weighted):")
         ks = []
         for c in crits:

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+  <title>Cross-check arXiv API Results</title>
+  <opensearch:totalResults>512</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/2501.00001</id>
+    <title>Cross-check arXiv diffusion language model record 1</title>
+    <published>2025-01-02T00:00:00Z</published>
+    <summary>Review workflow record.</summary>
+    <category term="cs.CL"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2502.00002</id>
+    <title>Cross-check arXiv diffusion language model record 2</title>
+    <published>2025-01-03T00:00:00Z</published>
+    <summary>Review workflow record.</summary>
+    <category term="cs.CL"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2503.00003</id>
+    <title>Cross-check arXiv diffusion language model record 3</title>
+    <published>2025-01-04T00:00:00Z</published>
+    <summary>Review workflow record.</summary>
+    <category term="cs.CL"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2504.00004</id>
+    <title>Cross-check arXiv diffusion language model record 4</title>
+    <published>2025-01-05T00:00:00Z</published>
+    <summary>Review workflow record.</summary>
+    <category term="cs.CL"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2505.00005</id>
+    <title>Cross-check arXiv diffusion language model record 5</title>
+    <published>2025-01-06T00:00:00Z</published>
+    <summary>Review workflow record.</summary>
+    <category term="cs.CL"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.00006</id>
+    <title>Cross-check arXiv diffusion language model record 6</title>
+    <published>2025-01-07T00:00:00Z</published>
+    <summary>Review workflow record.</summary>
+    <category term="cs.CL"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2507.00007</id>
+    <title>Cross-check arXiv diffusion language model record 7</title>
+    <published>2025-01-08T00:00:00Z</published>
+    <summary>Review workflow record.</summary>
+    <category term="cs.CL"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2508.00008</id>
+    <title>Cross-check arXiv diffusion language model record 8</title>
+    <published>2025-01-09T00:00:00Z</published>
+    <summary>Review workflow record.</summary>
+    <category term="cs.CL"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.00009</id>
+    <title>Cross-check arXiv diffusion language model record 9</title>
+    <published>2025-01-10T00:00:00Z</published>
+    <summary>Review workflow record.</summary>
+    <category term="cs.CL"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.00010</id>
+    <title>Cross-check arXiv diffusion language model record 10</title>
+    <published>2025-01-11T00:00:00Z</published>
+    <summary>Review workflow record.</summary>
+    <category term="cs.CL"/>
+  </entry>
+</feed>

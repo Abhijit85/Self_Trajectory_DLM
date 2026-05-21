@@ -1,0 +1,25 @@
+profile,study,cluster,tsf_form,operator_family,QA1_aims,QA2_mechanism_defined,QA3_ablation,QA4_repro,QA5_faithfulness,QA6_correction,QA7_family_scope,QA8_threats,review_total,rationale
+Reviewer A - mechanism-focused,D3PM,C1,None,none,1,1,0.5,1,0,0,0.5,1,5.0,Mechanism-focused view: None is mapped to none; operator/trajectory ablation evidence is limited; scope across operator families is narrow.
+Reviewer A - mechanism-focused,DiffuSeq,C1,None,none,1,0.5,0.5,1,0,0,1,1,5.0,Mechanism-focused view: None is mapped to none; mechanism definition is partial; operator/trajectory ablation evidence is limited.
+Reviewer A - mechanism-focused,SEDD,C1,None,none,1,1,0.5,1,0,0,1,1,5.5,Mechanism-focused view: None is mapped to none; operator/trajectory ablation evidence is limited.
+Reviewer A - mechanism-focused,MDLM,C1,None (declined),none,1,1,1,1,0,0,1,1,6.0,Mechanism-focused view: None (declined) is mapped to none; mechanism and ablation evidence are comparatively clear.
+Reviewer A - mechanism-focused,LLaDA,C1,Optional remask,none,1,1,0.5,1,0,0,1,1,5.5,Mechanism-focused view: Optional remask is mapped to none; operator/trajectory ablation evidence is limited.
+Reviewer A - mechanism-focused,Analog Bits,C2,PSC,PSC,1,1,1,1,0,0,0.5,1,5.5,Mechanism-focused view: PSC is mapped to PSC; scope across operator families is narrow.
+Reviewer A - mechanism-focused,TESS,C2,PSC (simplex),PSC,1,1,0.5,1,0,0,1,1,5.5,Mechanism-focused view: PSC (simplex) is mapped to PSC; operator/trajectory ablation evidence is limited.
+Reviewer A - mechanism-focused,TREC,C2,RRC,RRC,1,1,1,1,0,0,1,1,6.0,Mechanism-focused view: RRC is mapped to RRC; mechanism and ablation evidence are comparatively clear.
+Reviewer A - mechanism-focused,FastDiSS,C2,PSC (few-step),PSC,1,1,0.5,1,0,0,1,1,5.5,Mechanism-focused view: PSC (few-step) is mapped to PSC; operator/trajectory ablation evidence is limited.
+Reviewer A - mechanism-focused,Soft-Masked,C2,PSC sub-type,PSC-sub,1,1,1,1,0,0,0.5,1,5.5,Mechanism-focused view: PSC sub-type is mapped to PSC-sub; scope across operator families is narrow.
+Reviewer A - mechanism-focused,SCMDM,C2,PSC (post-train),PSC,1,1,1,1,0,0,1,1,6.0,Mechanism-focused view: PSC (post-train) is mapped to PSC; mechanism and ablation evidence are comparatively clear.
+Reviewer A - mechanism-focused,P2,C3,CPS,CPS,1,1,1,1,0,0,1,1,6.0,Mechanism-focused view: CPS is mapped to CPS; mechanism and ablation evidence are comparatively clear.
+Reviewer A - mechanism-focused,PAPL,C3,CPS (P-ELBO),CPS,1,1,1,1,0,0,1,1,6.0,Mechanism-focused view: CPS (P-ELBO) is mapped to CPS; mechanism and ablation evidence are comparatively clear.
+Reviewer A - mechanism-focused,CDLM,C4,CTF,CTF,1,1,1,1,0,1,0.5,1,6.5,Mechanism-focused view: CTF is mapped to CTF; scope across operator families is narrow.
+Reviewer A - mechanism-focused,ProSeCo,C4,CTF,CTF,1,1,1,1,0,1,0.5,1,6.5,Mechanism-focused view: CTF is mapped to CTF; scope across operator families is narrow.
+Reviewer A - mechanism-focused,PRISM,C4,CTF,CTF,1,1,0.5,1,0,1,0.5,1,6.0,Mechanism-focused view: CTF is mapped to CTF; operator/trajectory ablation evidence is limited; scope across operator families is narrow.
+Reviewer A - mechanism-focused,TraceDet,C5,None varied,none,1,1,0.5,1,1,0,1,1,6.5,Mechanism-focused view: None varied is mapped to none; operator/trajectory ablation evidence is limited.
+Reviewer A - mechanism-focused,DynHD,C5,None varied,none,1,1,0.5,1,1,0,1,1,6.5,Mechanism-focused view: None varied is mapped to none; operator/trajectory ablation evidence is limited.
+Reviewer A - mechanism-focused,Lost-in-Diffusion,C5,None varied,none,1,1,0.5,1,1,0,1,1,6.5,Mechanism-focused view: None varied is mapped to none; operator/trajectory ablation evidence is limited.
+Reviewer A - mechanism-focused,LangFlow,C6,PSC,PSC,1,1,1,1,0,0,1,1,6.0,Mechanism-focused view: PSC is mapped to PSC; mechanism and ablation evidence are comparatively clear.
+Reviewer A - mechanism-focused,RDLM,C6,PSC,PSC,1,1,0.5,1,0,0,1,1,5.5,Mechanism-focused view: PSC is mapped to PSC; operator/trajectory ablation evidence is limited.
+Reviewer A - mechanism-focused,FLM/FMLM,C6,Flow map,flow,1,1,0.5,1,0,0,0.5,1,5.0,Mechanism-focused view: Flow map is mapped to flow; operator/trajectory ablation evidence is limited; scope across operator families is narrow.
+Reviewer A - mechanism-focused,DLM-One,C6,Flow map,flow,1,0.5,0.5,1,0,0,1,1,5.0,Mechanism-focused view: Flow map is mapped to flow; mechanism definition is partial; operator/trajectory ablation evidence is limited.
+Reviewer A - mechanism-focused,LDDM,C7,PSC / latent,PSC,1,1,0.5,1,0,0,1,1,5.5,Mechanism-focused view: PSC / latent is mapped to PSC; operator/trajectory ablation evidence is limited.

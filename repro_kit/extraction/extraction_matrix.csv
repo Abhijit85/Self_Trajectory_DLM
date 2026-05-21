@@ -12,9 +12,9 @@ Soft-Masked,C2,PSC sub-type,PSC-sub,PPL (iso-compute),removing hard commitment i
 SCMDM,C2,PSC (post-train),PSC,GenPPL (OWT),training regime governs PSC outcome,discrete only; no faithfulness,OP2;OP3,1,1,1,1,0,0,1,1,6
 P2,C3,CPS,CPS,"pass@k, foldability",better paths imply better outputs,no faithfulness analysis,OP3;OP6,1,1,1,1,0,0,1,1,6
 PAPL,C3,CPS (P-ELBO),CPS,"MAUVE, GenPPL",better paths imply better outputs,no faithfulness analysis,OP3;OP6,1,1,1,1,0,0,1,1,6
-CDLM,C4,CTF,CTF,code revision (CRB),synthetic correction transfers broadly,no naturalistic halluc.; discrete only,OP4;OP6,1,1,1,1,0,1,0.5,1,6.5
-ProSeCo,C4,CTF,CTF,"GSM8K, code",synthetic correction transfers broadly,no naturalistic halluc.; discrete only,OP4;OP6,1,1,1,1,0,1,0.5,1,6.5
-PRISM,C4,CTF,CTF,provable correction,synthetic correction transfers broadly,no naturalistic halluc.; discrete only,OP4;OP6,1,1,0.5,1,0,1,0.5,1,6.0
+CDLM,C4,CTF,CTF,code revision (CRB),constructed correction data transfers broadly,no naturalistic halluc.; discrete only,OP4;OP6,1,1,1,1,0,1,0.5,1,6.5
+ProSeCo,C4,CTF,CTF,"GSM8K, code",constructed correction data transfers broadly,no naturalistic halluc.; discrete only,OP4;OP6,1,1,1,1,0,1,0.5,1,6.5
+PRISM,C4,CTF,CTF,provable correction,constructed correction data transfers broadly,no naturalistic halluc.; discrete only,OP4;OP6,1,1,0.5,1,0,1,0.5,1,6.0
 TraceDet,C5,None varied,none,AUROC,default trajectories reveal all failures,no TSF intervention,OP5;OP6,1,1,0.5,1,1,0,1,1,6.5
 DynHD,C5,None varied,none,"AUROC, entropy",default trajectories reveal all failures,no TSF intervention,OP5;OP6,1,1,0.5,1,1,0,1,1,6.5
 Lost-in-Diffusion,C5,None varied,none,halluc. rate,default trajectories reveal all failures,no TSF intervention,OP5;OP6,1,1,0.5,1,1,0,1,1,6.5

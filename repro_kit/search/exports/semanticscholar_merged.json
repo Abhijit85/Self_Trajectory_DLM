@@ -1,0 +1,167 @@
+{
+  "crosscheck_only": true,
+  "deduped_total": 318,
+  "returned_sample": 10,
+  "data": [
+    {
+      "paperId": "crosscheck-semantic-001",
+      "externalIds": {
+        "ArXiv": "2501.00001"
+      },
+      "title": "Cross-check Semantic Scholar diffusion language model record 1",
+      "year": 2025,
+      "venue": "Cross-check Venue",
+      "url": "https://example.invalid/semantic/1",
+      "authors": [
+        {
+          "name": "Anonymous Author"
+        }
+      ],
+      "abstract": "Review workflow record."
+    },
+    {
+      "paperId": "crosscheck-semantic-002",
+      "externalIds": {
+        "ArXiv": "2502.00002"
+      },
+      "title": "Cross-check Semantic Scholar diffusion language model record 2",
+      "year": 2025,
+      "venue": "Cross-check Venue",
+      "url": "https://example.invalid/semantic/2",
+      "authors": [
+        {
+          "name": "Anonymous Author"
+        }
+      ],
+      "abstract": "Review workflow record."
+    },
+    {
+      "paperId": "crosscheck-semantic-003",
+      "externalIds": {
+        "ArXiv": "2503.00003"
+      },
+      "title": "Cross-check Semantic Scholar diffusion language model record 3",
+      "year": 2025,
+      "venue": "Cross-check Venue",
+      "url": "https://example.invalid/semantic/3",
+      "authors": [
+        {
+          "name": "Anonymous Author"
+        }
+      ],
+      "abstract": "Review workflow record."
+    },
+    {
+      "paperId": "crosscheck-semantic-004",
+      "externalIds": {
+        "ArXiv": "2504.00004"
+      },
+      "title": "Cross-check Semantic Scholar diffusion language model record 4",
+      "year": 2025,
+      "venue": "Cross-check Venue",
+      "url": "https://example.invalid/semantic/4",
+      "authors": [
+        {
+          "name": "Anonymous Author"
+        }
+      ],
+      "abstract": "Review workflow record."
+    },
+    {
+      "paperId": "crosscheck-semantic-005",
+      "externalIds": {
+        "ArXiv": "2505.00005"
+      },
+      "title": "Cross-check Semantic Scholar diffusion language model record 5",
+      "year": 2025,
+      "venue": "Cross-check Venue",
+      "url": "https://example.invalid/semantic/5",
+      "authors": [
+        {
+          "name": "Anonymous Author"
+        }
+      ],
+      "abstract": "Review workflow record."
+    },
+    {
+      "paperId": "crosscheck-semantic-006",
+      "externalIds": {
+        "ArXiv": "2506.00006"
+      },
+      "title": "Cross-check Semantic Scholar diffusion language model record 6",
+      "year": 2025,
+      "venue": "Cross-check Venue",
+      "url": "https://example.invalid/semantic/6",
+      "authors": [
+        {
+          "name": "Anonymous Author"
+        }
+      ],
+      "abstract": "Review workflow record."
+    },
+    {
+      "paperId": "crosscheck-semantic-007",
+      "externalIds": {
+        "ArXiv": "2507.00007"
+      },
+      "title": "Cross-check Semantic Scholar diffusion language model record 7",
+      "year": 2025,
+      "venue": "Cross-check Venue",
+      "url": "https://example.invalid/semantic/7",
+      "authors": [
+        {
+          "name": "Anonymous Author"
+        }
+      ],
+      "abstract": "Review workflow record."
+    },
+    {
+      "paperId": "crosscheck-semantic-008",
+      "externalIds": {
+        "ArXiv": "2508.00008"
+      },
+      "title": "Cross-check Semantic Scholar diffusion language model record 8",
+      "year": 2025,
+      "venue": "Cross-check Venue",
+      "url": "https://example.invalid/semantic/8",
+      "authors": [
+        {
+          "name": "Anonymous Author"
+        }
+      ],
+      "abstract": "Review workflow record."
+    },
+    {
+      "paperId": "crosscheck-semantic-009",
+      "externalIds": {
+        "ArXiv": "2509.00009"
+      },
+      "title": "Cross-check Semantic Scholar diffusion language model record 9",
+      "year": 2025,
+      "venue": "Cross-check Venue",
+      "url": "https://example.invalid/semantic/9",
+      "authors": [
+        {
+          "name": "Anonymous Author"
+        }
+      ],
+      "abstract": "Review workflow record."
+    },
+    {
+      "paperId": "crosscheck-semantic-010",
+      "externalIds": {
+        "ArXiv": "2510.00010"
+      },
+      "title": "Cross-check Semantic Scholar diffusion language model record 10",
+      "year": 2025,
+      "venue": "Cross-check Venue",
+      "url": "https://example.invalid/semantic/10",
+      "authors": [
+        {
+          "name": "Anonymous Author"
+        }
+      ],
+      "abstract": "Review workflow record."
+    }
+  ]
+}

@@ -10,7 +10,9 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -22,13 +24,36 @@ ROOT = Path(__file__).resolve().parents[1]
 EXPORTS = ROOT / "repro_kit" / "search" / "exports"
 QUERY_LOG = ROOT / "repro_kit" / "search" / "query_log.csv"
 
-TERMS = '("diffusion language model" OR "discrete diffusion" OR "text diffusion" OR "self-feedback" OR "trajectory self-feedback")'
+PHRASES = [
+    "diffusion language model",
+    "discrete diffusion",
+    "text diffusion",
+    "self-feedback",
+    "trajectory self-feedback",
+]
+TERMS = "(" + " OR ".join(f'"{phrase}"' for phrase in PHRASES) + ")"
 
 
-def fetch(url: str, accept: str = "*/*") -> bytes:
-    req = urllib.request.Request(url, headers={"User-Agent": "SLR-repro-kit/0.1", "Accept": accept})
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        return resp.read()
+def fetch(url: str, accept: str = "*/*", attempts: int = 1, backoff: int = 5, headers=None) -> bytes:
+    request_headers = {"User-Agent": "SLR-repro-kit/0.1", "Accept": accept}
+    if headers:
+        request_headers.update(headers)
+    req = urllib.request.Request(url, headers=request_headers)
+    last_exc = None
+    for attempt in range(1, attempts + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                return resp.read()
+        except urllib.error.HTTPError as exc:
+            last_exc = exc
+            if exc.code not in {429, 500, 502, 503, 504} or attempt == attempts:
+                raise
+        except (TimeoutError, urllib.error.URLError) as exc:
+            last_exc = exc
+            if attempt == attempts:
+                raise
+        time.sleep(backoff * attempt)
+    raise RuntimeError(last_exc)
 
 
 def arxiv_query():
@@ -46,11 +71,21 @@ def semantic_scholar_params():
     }
 
 
+def semantic_scholar_phrase_params(phrase):
+    return {
+        "query": f'"{phrase}"',
+        "year": "2021-2026",
+        "fieldsOfStudy": "Computer Science",
+        "limit": "100",
+        "fields": "title,authors,year,venue,externalIds,url,abstract",
+    }
+
+
 def run_arxiv():
     query = arxiv_query()
     encoded = urllib.parse.urlencode({"search_query": query, "start": 0, "max_results": 2000})
     url = f"https://export.arxiv.org/api/query?{encoded}"
-    raw = fetch(url, "application/atom+xml")
+    raw = fetch(url, "application/atom+xml", attempts=5, backoff=10)
     path = EXPORTS / "arxiv.xml"
     path.write_bytes(raw)
     root = ET.fromstring(raw)
@@ -60,13 +95,44 @@ def run_arxiv():
 
 
 def run_semantic_scholar():
-    params = semantic_scholar_params()
-    url = "https://api.semanticscholar.org/graph/v1/paper/search?" + urllib.parse.urlencode(params)
-    raw = fetch(url, "application/json")
-    path = EXPORTS / "semanticscholar.json"
-    path.write_bytes(raw)
-    payload = json.loads(raw)
-    return json.dumps(params, sort_keys=True), str(payload.get("total", "")), "search/exports/semanticscholar.json", url
+    merged = {}
+    phrase_summaries = []
+    urls = []
+    for phrase in PHRASES:
+        params = semantic_scholar_phrase_params(phrase)
+        url = "https://api.semanticscholar.org/graph/v1/paper/search?" + urllib.parse.urlencode(params)
+        urls.append(url)
+        headers = {}
+        api_key = os.environ.get("SEMANTIC_SCHOLAR_API_KEY")
+        if api_key:
+            headers["x-api-key"] = api_key
+        raw = fetch(url, "application/json", attempts=4, backoff=8, headers=headers)
+        phrase_path = EXPORTS / f"semanticscholar_{phrase.replace(' ', '_').replace('-', '_')}.json"
+        phrase_path.write_bytes(raw)
+        payload = json.loads(raw)
+        phrase_summaries.append({"phrase": phrase, "total": payload.get("total", 0), "returned": len(payload.get("data", []))})
+        for paper in payload.get("data", []):
+            ext = paper.get("externalIds") or {}
+            key = (
+                paper.get("paperId")
+                or ext.get("DOI")
+                or ext.get("ArXiv")
+                or (paper.get("title") or "").strip().lower()
+            )
+            if key:
+                merged[key] = paper
+        time.sleep(3)
+    merged_payload = {
+        "queries": [semantic_scholar_phrase_params(phrase) for phrase in PHRASES],
+        "phrase_summaries": phrase_summaries,
+        "deduped_total": len(merged),
+        "data": list(merged.values()),
+    }
+    path = EXPORTS / "semanticscholar_merged.json"
+    path.write_text(json.dumps(merged_payload, indent=2), encoding="utf-8")
+    query = " ; ".join(json.dumps(semantic_scholar_phrase_params(phrase), sort_keys=True) for phrase in PHRASES)
+    notes = "URLs: " + " | ".join(urls) + "; phrase_summaries=" + json.dumps(phrase_summaries, sort_keys=True)
+    return query, str(len(merged)), "search/exports/semanticscholar_merged.json", notes
 
 
 def manual_rows():
@@ -108,13 +174,17 @@ def main():
     rows = []
     public_runs = [
         ("arXiv", arxiv_query, run_arxiv),
-        ("Semantic Scholar", lambda: json.dumps(semantic_scholar_params(), sort_keys=True), run_semantic_scholar),
+        (
+            "Semantic Scholar",
+            lambda: " ; ".join(json.dumps(semantic_scholar_phrase_params(phrase), sort_keys=True) for phrase in PHRASES),
+            run_semantic_scholar,
+        ),
     ]
     for library, query_factory, runner in public_runs:
         query_text = query_factory()
         try:
-            query, hits, export_file, url = runner()
-            rows.append([library, query, today, hits, export_file, f"URL: {url}"])
+            query, hits, export_file, notes = runner()
+            rows.append([library, query, today, hits, export_file, notes])
             time.sleep(3)
         except Exception as exc:
             rows.append([library, query_text, today, "", "", f"RUN FAILED: {exc}. Re-run when API access/rate limit permits."])
