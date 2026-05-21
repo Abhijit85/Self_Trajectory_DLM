@@ -1,0 +1,122 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Length 3327 >>
+stream
+BT
+/F1 9 Tf
+54 738 Td
+(PRISMA 2020 Checklist) Tj
+0 -12 Td
+() Tj
+0 -12 Td
+(Checklist status: draft, pending final manuscript page/section locations.) Tj
+0 -12 Td
+() Tj
+0 -12 Td
+(This file is a filled working checklist for the review package. It paraphrases) Tj
+0 -12 Td
+(PRISMA 2020 reporting topics and maps them to the current manuscript/repository) Tj
+0 -12 Td
+(locations. The official PRISMA 2020 checklist is available from the PRISMA) Tj
+0 -12 Td
+(statement website: https://www.prisma-statement.org/prisma-2020-checklist) Tj
+0 -12 Td
+() Tj
+0 -12 Td
+(Item - Reporting topic: Location) Tj
+0 -12 Td
+(Title - Identify the report as a systematic review: Title) Tj
+0 -12 Td
+(Abstract - Structured summary of objectives, methods, results, and limitations: Abstract) Tj
+0 -12 Td
+(Rationale - Explain why the review is needed: Section 1) Tj
+0 -12 Td
+(Objectives - State review questions: Section 3.1; protocol.md) Tj
+0 -12 Td
+(Eligibility criteria - Specify inclusion and exclusion criteria: Section 3.3; protocol.md) Tj
+0 -12 Td
+(Information sources - List databases, registers, and dates searched: Section 3.2;) Tj
+0 -12 Td
+(search/query_log.csv) Tj
+0 -12 Td
+(Search strategy - Provide complete search strings: Appendix A; search/query_log.csv) Tj
+0 -12 Td
+(Selection process - Explain screening process and reviewer roles: Section 3.4;) Tj
+0 -12 Td
+(screening/screening_sheet.csv) Tj
+0 -12 Td
+(Data collection process - Explain extraction process and reviewer roles: Section 3.6;) Tj
+0 -12 Td
+(extraction/extraction_matrix.csv) Tj
+0 -12 Td
+(Data items - Define all extracted fields: Section 3.6; extraction/extraction_matrix.csv) Tj
+0 -12 Td
+(Study quality - Define quality/risk-of-bias assessment: Section 3.5; quality/qa_rubric.md) Tj
+0 -12 Td
+(Effect measures - Explain why meta-analysis effect measures are not applicable: Section 3.7) Tj
+0 -12 Td
+(Synthesis methods - Describe narrative synthesis procedure: Sections 3.7 and 5) Tj
+0 -12 Td
+(Reporting bias - Discuss reporting bias and missing evidence: Section 8) Tj
+0 -12 Td
+(Certainty - Explain how QA scores affect confidence: Section 3.5) Tj
+0 -12 Td
+(Study selection results - Report flow counts and exclusions: Figure 1;) Tj
+0 -12 Td
+(extraction/search_log.csv) Tj
+0 -12 Td
+(Study characteristics - Present per-study characteristics: Appendix B;) Tj
+0 -12 Td
+(extraction/extraction_matrix.csv) Tj
+0 -12 Td
+(Quality results - Present quality scores per study: Appendix B) Tj
+0 -12 Td
+(Individual study results - Present extracted evidence per study: Appendix B) Tj
+0 -12 Td
+(Synthesis results - Present cluster and RQ-level findings: Sections 4-6) Tj
+0 -12 Td
+(Reporting bias results - Present reporting-bias observations: Section 8) Tj
+0 -12 Td
+(Certainty results - Present confidence limits from QA: Section 8) Tj
+0 -12 Td
+(Discussion - Interpret findings, limitations, and implications: Section 8) Tj
+0 -12 Td
+(Registration/protocol - Provide registration or protocol location: protocol.md;) Tj
+0 -12 Td
+(OSF/anonymous mirror pending) Tj
+0 -12 Td
+(Support - Describe funding or support: Manuscript funding statement pending) Tj
+0 -12 Td
+(Competing interests - Describe competing interests: Manuscript declaration pending) Tj
+0 -12 Td
+(Availability - State where data, code, and materials are available: Repository and) Tj
+0 -12 Td
+(anonymized mirror pending) Tj
+ET
+endstream
+endobj
+3 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 2 0 R >>
+endobj
+4 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+5 0 obj
+<< /Type /Catalog /Pages 4 0 R >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000003458 00000 n 
+0000003584 00000 n 
+0000003641 00000 n 
+trailer
+<< /Size 6 /Root 5 0 R >>
+startxref
+3690
+%%EOF

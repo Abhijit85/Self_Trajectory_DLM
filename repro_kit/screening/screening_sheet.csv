@@ -1,7 +1,6 @@
 record_id,title,authors,year,source_library,doi_or_arxiv_id,duplicate_of,ta_decision,ta_screener1,ta_screener2,fulltext_decision,exclusion_reason,exclusion_code,included_final,added_by,notes
-R0001,"EXAMPLE: paste real record title",,2025,arXiv,arXiv:2xxx.xxxxx,,include,include,include,include,,,"yes",search,"example row — delete"
-R0002,"EXAMPLE: image-only diffusion paper",,2024,IEEE Xplore,10.1109/xxxx,,exclude,exclude,exclude,,image/audio/video diffusion only,EC1,"no",,"excluded at T/A"
-R0003,"EXAMPLE: superseded preprint v1",,2025,Semantic Scholar,arXiv:2yyy.yyyyy,R0017,,,,,,EC4,"no",,"duplicate of R0017"
+R0001,"SwiftSketch: A Diffusion Model for Image-to-Vector Sketch Generation","E. Arar; Yarden Frenkel; D. Cohen-Or; Ariel Shamir; Yael Vinker",2025,Semantic Scholar,arXiv:2502.08642,,,,,,,,,search,"Fetched 2026-05-21; awaiting two independent title/abstract screeners"
+R0002,"On-the-fly Repulsion in the Contextual Space for Rich Diversity in Diffusion Transformers","Omer Dahary; Benaya Koren; Daniel Garibi; Daniel Cohen-Or",2026,Semantic Scholar,arXiv:2603.28762,,,,,,,,,search,"Fetched 2026-05-21; awaiting two independent title/abstract screeners"
 # ----------------------------------------------------------------------------------------
 # COLUMN GUIDE
 # ta_decision        : include | exclude   (title/abstract stage, against IC1-IC3)

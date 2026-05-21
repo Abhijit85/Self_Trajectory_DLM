@@ -10,12 +10,13 @@ as the audit structure for the review, but the included CSVs should not be cited
 as final SLR evidence until the real search, screening, extraction, and
 independent quality-rating work has been completed.
 
-Known template fields still to replace:
+Known fields still to complete:
 
-- `repro_kit/search/query_log.csv` contains placeholder queries, dates, and hit
-  counts.
-- `repro_kit/search/exports/` is reserved for raw search exports.
-- `repro_kit/screening/screening_sheet.csv` contains example screening rows.
+- `repro_kit/search/query_log.csv` contains one saved Semantic Scholar run;
+  arXiv was rate-limited on 2026-05-21, and OpenReview, ACL Anthology, IEEE
+  Xplore, and ACM Digital Library still require manual/API exports.
+- `repro_kit/screening/screening_sheet.csv` contains fetched unscreened records
+  from saved exports; two independent title/abstract decisions are still needed.
 - `repro_kit/quality/qa_rater1.csv` and `repro_kit/quality/qa_rater2.csv`
   contain illustrative rater scores.
 - `repro_kit/extraction/extraction_matrix.csv` contains worked-template
@@ -38,6 +39,11 @@ The main audit trail is in [`repro_kit/`](repro_kit/):
 - [`repro_kit/extraction/search_log.csv`](repro_kit/extraction/search_log.csv):
   funnel summary by source, stage, and exclusion reason.
 - [`repro_kit/PRISMA_map.md`](repro_kit/PRISMA_map.md): PRISMA 2020 item map.
+- [`repro_kit/protocol.md`](repro_kit/protocol.md): dated review protocol.
+- [`repro_kit/PRISMA_2020_checklist.pdf`](repro_kit/PRISMA_2020_checklist.pdf):
+  draft PRISMA checklist PDF.
+- [`scripts/run_searches.py`](scripts/run_searches.py): public/API search runner
+  for sources that can be queried without a manual export.
 
 ## Auditing The Central Claim
 
