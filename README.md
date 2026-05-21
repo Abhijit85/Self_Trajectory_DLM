@@ -1,7 +1,25 @@
 # Self_Trajectory_DLM
 
 This repository contains reproducibility materials for a systematic literature
-review of trajectory self-feedback in deep learning models.
+review of trajectory self-feedback in diffusion language models.
+
+## Review Status
+
+This repository is currently a reproducibility-kit scaffold. It is safe to use
+as the audit structure for the review, but the included CSVs should not be cited
+as final SLR evidence until the real search, screening, extraction, and
+independent quality-rating work has been completed.
+
+Known template fields still to replace:
+
+- `repro_kit/search/query_log.csv` contains placeholder queries, dates, and hit
+  counts.
+- `repro_kit/search/exports/` is reserved for raw search exports.
+- `repro_kit/screening/screening_sheet.csv` contains example screening rows.
+- `repro_kit/quality/qa_rater1.csv` and `repro_kit/quality/qa_rater2.csv`
+  contain illustrative rater scores.
+- `repro_kit/extraction/extraction_matrix.csv` contains worked-template
+  extraction and QA values.
 
 ## Repository Contents
 
@@ -22,6 +40,8 @@ The main audit trail is in [`repro_kit/`](repro_kit/):
 - [`repro_kit/PRISMA_map.md`](repro_kit/PRISMA_map.md): PRISMA 2020 item map.
 
 ## Auditing The Central Claim
+
+After replacing the template data with completed review data:
 
 1. Open [`repro_kit/extraction/extraction_matrix.csv`](repro_kit/extraction/extraction_matrix.csv).
 2. Filter for rows where `QA5_faithfulness == 1`.
@@ -46,17 +66,11 @@ python3 repro_kit/quality/compute_kappa.py --mode screening \
   repro_kit/screening/screening_sheet.csv
 ```
 
-Current results:
+Do not report the output from the template files as study results. Re-run these
+commands after the real independent coding and screening data are in place.
 
-- QA agreement: mean quadratic-weighted kappa = `0.892`, range `0.558-1.000`
-  over `24` studies.
-- Screening agreement: Cohen's kappa = `1.000`, raw agreement = `100.0%`
-  over `2` records.
-- Central-claim audit: `24` studies checked; `0` rows have both
-  `QA5_faithfulness == 1` and `operator_family != none`.
+## Double-Blind Use
 
-## Status
-
-The current CSVs in `repro_kit/` are the repository's active extraction and
-search-log artifacts. Re-run the commands above after any changes to the
-screening, quality, or extraction files.
+Do not cite a named GitHub repository during double-blind review. Use an
+anonymous.4open.science mirror or an anonymized OSF view-only link for review,
+then move the finalized artifacts to a named repository for camera-ready release.
