@@ -1,0 +1,1058 @@
+{
+  "queries": [
+    "diffusion language model",
+    "discrete diffusion",
+    "text diffusion",
+    "self-feedback",
+    "trajectory self-feedback"
+  ],
+  "xml_files_considered": 825,
+  "xml_files_downloaded": 825,
+  "deduped_total": 56,
+  "records": [
+    {
+      "id": "2023.acl-long.158",
+      "bibkey": "bi-etal-2023-diffusemp",
+      "title": "DiffusEmp: A Diffusion Model-Based Framework with Multi-Grained Control for Empathetic Response Generation",
+      "authors": [
+        "Guanqun Bi",
+        "Lei Shen",
+        "Yanan Cao",
+        "Meng Chen",
+        "Yuqiang Xie",
+        "Zheng Lin",
+        "Xiaodong He"
+      ],
+      "year": "2023",
+      "venue": "acl",
+      "booktitle": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2023.acl-long.158",
+      "url": "https://aclanthology.org/2023.acl-long.158/",
+      "abstract": "Empathy is a crucial factor in open-domain conversations, which naturally shows one\u2019s caring and understanding to others. Though several methods have been proposed to generate empathetic responses, existing works often lead to monotonous empathy that refers to generic and safe expressions. In this paper, we propose to use explicit control to guide the empathy expression and design a framework DiffusEmp based on conditional diffusion language model to unify the utilization of dialogue context and attribute-oriented control signals. Specifically, communication mechanism, intent, and semantic frame are imported as multi-grained signals that control the empathy realization from coarse to fine levels. We then design a specific masking strategy to reflect the relationship between multi-grained signals and response tokens, and integrate it into the diffusion model to influence the generative process. Experimental results on a benchmark dataset EmpatheticDialogue show that our framework outperforms competitive baselines in terms of controllability, informativeness, and diversity without the loss of context-relatedness.",
+      "source_xml": "data/xml/2023.acl.xml"
+    },
+    {
+      "id": "2023.acl-long.248",
+      "bibkey": "he-etal-2023-diffusionbert",
+      "title": "DiffusionBERT: Improving Generative Masked Language Models with Diffusion Models",
+      "authors": [
+        "Zhengfu He",
+        "Tianxiang Sun",
+        "Qiong Tang",
+        "Kuanning Wang",
+        "Xuanjing Huang",
+        "Xipeng Qiu"
+      ],
+      "year": "2023",
+      "venue": "acl",
+      "booktitle": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2023.acl-long.248",
+      "url": "https://aclanthology.org/2023.acl-long.248/",
+      "abstract": "We present DiffusionBERT, a new generative masked language model based on discrete dif- fusion models. Diffusion models and many pre- trained language models have a shared training objective, i.e., denoising, making it possible to combine the two powerful models and enjoy the best of both worlds. On the one hand, dif- fusion models offer a promising training strat- egy that helps improve the generation quality. On the other hand, pre-trained denoising lan- guage models (e.g., BERT) can be used as a good initialization that accelerates convergence. We explore training BERT to learn the reverse process of a discrete diffusion process with an absorbing state and elucidate several designs to improve it. First, we propose a new noise schedule for the forward diffusion process that controls the degree of noise added at each step based on the information of each token. Sec- ond, we investigate several designs of incorpo- rating the time step into BERT. Experiments on unconditional text generation demonstrate that DiffusionBERT achieves significant improve- ment over existing diffusion models for text (e.g., D3PM and Diffusion-LM) and previous generative masked language models in terms of perplexity and BLEU score. Promising re- sults in conditional generation tasks show that DiffusionBERT can generate texts of compa- rable quality and more diverse than a series of established baselines.",
+      "source_xml": "data/xml/2023.acl.xml"
+    },
+    {
+      "id": "2023.acl-long.647",
+      "bibkey": "han-etal-2023-ssd",
+      "title": "SSD-LM: Semi-autoregressive Simplex-based Diffusion Language Model for Text Generation and Modular Control",
+      "authors": [
+        "Xiaochuang Han",
+        "Sachin Kumar",
+        "Yulia Tsvetkov"
+      ],
+      "year": "2023",
+      "venue": "acl",
+      "booktitle": "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2023.acl-long.647",
+      "url": "https://aclanthology.org/2023.acl-long.647/",
+      "abstract": "Despite the growing success of diffusion models in continuous-valued domains (e.g., images), similar efforts for discrete domains such as text have yet to match the performance of autoregressive language models. In this work, we present SSD-LM\u2014a diffusion-based language model with two key design choices. First, SSD-LM is semi-autoregressive, iteratively generating blocks of text, allowing for flexible output length at decoding time while enabling local bidirectional context updates. Second, it is simplex-based, performing diffusion on the natural vocabulary space rather than a learned latent space, allowing us to incorporate classifier guidance and modular control using off-the-shelf classifiers without any adaptation. We evaluate SSD-LM on unconstrained text generation benchmarks, and show that it matches or outperforms strong autoregressive GPT-2 models across standard quality and diversity metrics, while vastly outperforming diffusion-based baselines. On controlled text generation, SSD-LM also outperforms competitive baselines, with an extra advantage in modularity.",
+      "source_xml": "data/xml/2023.acl.xml"
+    },
+    {
+      "id": "2023.emnlp-main.289",
+      "bibkey": "chen-etal-2023-cheaper",
+      "title": "A Cheaper and Better Diffusion Language Model with Soft-Masked Noise",
+      "authors": [
+        "Jiaao Chen",
+        "Aston Zhang",
+        "Mu Li",
+        "Alex Smola",
+        "Diyi Yang"
+      ],
+      "year": "2023",
+      "venue": "emnlp",
+      "booktitle": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+      "doi": "10.18653/v1/2023.emnlp-main.289",
+      "url": "https://aclanthology.org/2023.emnlp-main.289/",
+      "abstract": "Diffusion models that are based on iterative denoising have been recently proposed and leveraged in various generation tasks like image generation. Whereas, as a way inherently built for continuous data, existing diffusion models still have some limitations in modeling discrete data, e.g., languages. For example, the generally used Gaussian noise can not handle the discrete corruption well, and the objectives in continuous spaces fail to be stable for textual data in the diffusion process especially when the dimension is high. To alleviate these issues, we introduce a novel diffusion model for language modeling, Masked-Diffuse LM, with lower training cost and better performances, inspired by linguistic features in languages. Specifically, we design a linguistic-informed forward process which adds corruptions to the text through strategically soft-masking to better noise the textual data. Also, we directly predict the categorical distribution with cross-entropy loss function in every diffusion step to connect the continuous space and discrete space in a more efficient and straightforward way. Through experiments on 5 controlled generation tasks, we demonstrate that our Masked-Diffuse LM can achieve better generation quality than the state-of-the-art diffusion models with better efficiency.",
+      "source_xml": "data/xml/2023.emnlp.xml"
+    },
+    {
+      "id": "2023.emnlp-main.708",
+      "bibkey": "liu-etal-2023-crystal",
+      "title": "Crystal: Introspective Reasoners Reinforced with Self-Feedback",
+      "authors": [
+        "Jiacheng Liu",
+        "Ramakanth Pasunuru",
+        "Hannaneh Hajishirzi",
+        "Yejin Choi",
+        "Asli Celikyilmaz"
+      ],
+      "year": "2023",
+      "venue": "emnlp",
+      "booktitle": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+      "doi": "10.18653/v1/2023.emnlp-main.708",
+      "url": "https://aclanthology.org/2023.emnlp-main.708/",
+      "abstract": "Extensive work has shown that the performance and interpretability of commonsense reasoning can be improved via knowledge-augmented reasoning methods, where the knowledge that underpins the reasoning process is explicitly verbalized and utilized. However, existing implementations, including \u201cchain-of-thought\u201d and its variants, fall short in capturing the *introspective* nature of knowledge required in commonsense reasoning, and in accounting for the mutual adaptation between the generation and utilization of knowledge. We propose a novel method to develop an introspective commonsense reasoner, **Crystal**. To tackle commonsense problems, it first introspects for knowledge statements related to the given question, and subsequently makes an informed prediction that is grounded in the previously introspected knowledge. The knowledge introspection and knowledge-grounded reasoning modes of the model are tuned via reinforcement learning to mutually adapt, where the reward derives from the feedback given by the model itself. Experiments show that Crystal significantly outperforms both the standard supervised finetuning and chain-of-thought distilled methods, and enhances the transparency of the commonsense reasoning process. Our work ultimately validates the feasibility and potential of reinforcing a neural model with self-feedback.",
+      "source_xml": "data/xml/2023.emnlp.xml"
+    },
+    {
+      "id": "2023.emnlp-main.709",
+      "bibkey": "zhu-etal-2023-diffs2ut",
+      "title": "DiffS2UT: A Semantic Preserving Diffusion Model for Textless Direct Speech-to-Speech Translation",
+      "authors": [
+        "Yongxin Zhu",
+        "Zhujin Gao",
+        "Xinyuan Zhou",
+        "Ye Zhongyi",
+        "Linli Xu"
+      ],
+      "year": "2023",
+      "venue": "emnlp",
+      "booktitle": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+      "doi": "10.18653/v1/2023.emnlp-main.709",
+      "url": "https://aclanthology.org/2023.emnlp-main.709/",
+      "abstract": "While Diffusion Generative Models have achieved great success on image generation tasks, how to efficiently and effectively incorporate them into speech generation especially translation tasks remains a non-trivial problem. Specifically, due to the low information density of speech data, the transformed discrete speech unit sequence is much longer than the corresponding text transcription, posing significant challenges to existing auto-regressive models. Furthermore, it is not optimal to brutally apply discrete diffusion on the speech unit sequence while disregarding the continuous space structure, which will degrade the generation performance significantly. In this paper, we propose a novel diffusion model by applying the diffusion forward process in the continuous speech representation space, while employing the diffusion backward process in the discrete speech unit space. In this way, we preserve the semantic structure of the continuous speech representation space in the diffusion process and integrate the continuous and discrete diffusion models. We conduct extensive experiments on the textless direct speech-to-speech translation task, where the proposed method achieves comparable results to the computationally intensive auto-regressive baselines (500 steps on average) with significantly fewer decoding steps (50 steps).",
+      "source_xml": "data/xml/2023.emnlp.xml"
+    },
+    {
+      "id": "2023.findings-emnlp.319",
+      "bibkey": "hao-etal-2023-complex",
+      "title": "Complex Event Schema Induction with Knowledge-Enriched Diffusion Model",
+      "authors": [
+        "Yupu Hao",
+        "Pengfei Cao",
+        "Yubo Chen",
+        "Kang Liu",
+        "Jiexin Xu",
+        "Huaijun Li",
+        "Xiaojian Jiang",
+        "Jun Zhao"
+      ],
+      "year": "2023",
+      "venue": "findings",
+      "booktitle": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+      "doi": "10.18653/v1/2023.findings-emnlp.319",
+      "url": "https://aclanthology.org/2023.findings-emnlp.319/",
+      "abstract": "The concept of a complex event schema pertains to the graph structure that represents real-world knowledge of events and their multi-dimensional relationships. However, previous studies on event schema induction have been hindered by challenges such as error propagation and data quality issues. To tackle these challenges, we propose a knowledge-enriched discrete diffusion model. Specifically, we distill the abundant event scenario knowledge of Large Language Models (LLMs) through an object-oriented Python style prompt. We incorporate this knowledge into the training data, enhancing its quality. Subsequently, we employ a discrete diffusion process to generate all nodes and links simultaneously in a non-auto-regressive manner to tackle the problem of error propagation. Additionally, we devise an entity relationship prediction module to complete entity relationships between event arguments. Experimental results demonstrate that our approach achieves outstanding performance across a range of evaluation metrics.",
+      "source_xml": "data/xml/2023.findings.xml"
+    },
+    {
+      "id": "2023.findings-emnlp.735",
+      "bibkey": "huang-etal-2023-diffusion",
+      "title": "Diffusion Language Model with Query-Document Relevance for Query-Focused Summarization",
+      "authors": [
+        "Shaoyao Huang",
+        "Luozheng Qin",
+        "Ziqiang Cao"
+      ],
+      "year": "2023",
+      "venue": "findings",
+      "booktitle": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+      "doi": "10.18653/v1/2023.findings-emnlp.735",
+      "url": "https://aclanthology.org/2023.findings-emnlp.735/",
+      "abstract": "Query-Focused Summarization (QFS) aims to generate summaries from source documents that can answer specific queries. Although the QFS task has gained increasing attention recently, its development is constrained by the fact that mainstream QFS models are BART variants, which are autoregressive and suffer from long-term dependencies and exposure bias. To address these problems, we adopt a diffusion language model that performs well in non-autoregressive scenarios to effectively resolve issues related to autoregressive methods. However, QFS requires guidance from queries to generate adequate summaries, while diffusion language models have limited sensitivity to queries. In this paper, we propose QFS-DLM, a non-autoregressive diffusion language model that incorporates query-document fragment relevance and query-document global relevance to enhance the adaptability of QFS tasks. Firstly, we extract key fragments from documents based on queries and assign higher weights to them, thereby emphasizing crucial and continuous information within the document. Secondly, we calculate global relevance scores between queries and documents, and then integrate these scores into the model\u2019s loss function, enabling the model to prefer high-quality data and distance itself from low-quality data. Overall, our method achieves state-of-the-art performance on Debatepedia and PubMedQA datasets in ROUGE scores, GPT-4, and human evaluations.",
+      "source_xml": "data/xml/2023.findings.xml"
+    },
+    {
+      "id": "2023.findings-emnlp.860",
+      "bibkey": "huang-etal-2023-diffusionsl",
+      "title": "DiffusionSL: Sequence Labeling via Tag Diffusion Process",
+      "authors": [
+        "Ziyang Huang",
+        "Pengfei Cao",
+        "Jun Zhao",
+        "Kang Liu"
+      ],
+      "year": "2023",
+      "venue": "findings",
+      "booktitle": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+      "doi": "10.18653/v1/2023.findings-emnlp.860",
+      "url": "https://aclanthology.org/2023.findings-emnlp.860/",
+      "abstract": "Sequence Labeling (SL) is long-standing in Natural Language Processing (NLP). Traditionally, discriminative models have been widely used to capture the conditional distribution of sequence tags, rather than generative models. In this paper, we present DiffusionSL, a framework that utilizes a conditional discrete diffusion model for generating discrete tag data, resulting in a Tag Diffusion Process. We treat the natural language sequence as the conditional signal and the sequence tags as the generation target, iteratively refining the noisy tags to obtain clean ones. To address the discreteness issue, we propose the Bit-Tag Converter (BTConverter) to model the target in continuous data space. Furthermore, we introduce the Bit Diffusion Transformer (BitDiT) to model the process of noise elimination. Leveraging the powerful iterative refinement capability of the diffusion model, DiffusionSL achieves superior performance against previous state-of-the-art (SOTA) baselines and outperforms gpt-3.5-turbo significantly across multiple benchmark datasets and various tasks.",
+      "source_xml": "data/xml/2023.findings.xml"
+    },
+    {
+      "id": "2023.findings-emnlp.919",
+      "bibkey": "wang-etal-2023-infodiffusion",
+      "title": "InfoDiffusion: Information Entropy Aware Diffusion Process for Non-Autoregressive Text Generation",
+      "authors": [
+        "Renzhi Wang",
+        "Jing Li",
+        "Piji Li"
+      ],
+      "year": "2023",
+      "venue": "findings",
+      "booktitle": "Findings of the Association for Computational Linguistics: EMNLP 2023",
+      "doi": "10.18653/v1/2023.findings-emnlp.919",
+      "url": "https://aclanthology.org/2023.findings-emnlp.919/",
+      "abstract": "Diffusion models have garnered considerable interest in the field of text generation. Several studies have explored text diffusion models with different structures and applied them to various tasks, including named entity recognition and summarization. However, there exists a notable disparity between the \u201ceasy-first\u201d text generation process of current diffusion models and the \u201ckeyword-first\u201d natural text generation process of humans, which has received limited attention. To bridge this gap, we propose InfoDiffusion, a non-autoregressive text diffusion model. Our approach introduces a \u201ckeyinfo-first\u201d generation strategy and incorporates a noise schedule based on the amount of text information. In addition, InfoDiffusion combines self-conditioning with a newly proposed partially noising model structure. Experimental results show that InfoDiffusion outperforms the baseline model in terms of generation quality and diversity, as well as exhibiting higher sampling efficiency.",
+      "source_xml": "data/xml/2023.findings.xml"
+    },
+    {
+      "id": "2024.acl-long.826",
+      "bibkey": "xu-etal-2024-pride",
+      "title": "Pride and Prejudice: LLM Amplifies Self-Bias in Self-Refinement",
+      "authors": [
+        "Wenda Xu",
+        "Guanglei Zhu",
+        "Xuandong Zhao",
+        "Liangming Pan",
+        "Lei Li",
+        "William Wang"
+      ],
+      "year": "2024",
+      "venue": "acl",
+      "booktitle": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2024.acl-long.826",
+      "url": "https://aclanthology.org/2024.acl-long.826/",
+      "abstract": "Recent studies show that large language models (LLMs) improve their performance through self-feedback on certain tasks while degrade on others. We discovered that such a contrary is due to LLM\u2019s bias in evaluating their own output. In this paper, we formally define LLM\u2019s self-bias \u2013 the tendency to favor its own generation \u2013 using two statistics. We analyze six LLMs (GPT-4, GPT-3.5, Gemini, LLaMA2, Mixtral and DeepSeek) on translation, constrained text generation, and mathematical reasoning tasks. We find that self-bias is prevalent in all examined LLMs across multiple languages and tasks. Our analysis reveals that while the self-refine pipeline improves the fluency and understandability of model outputs, it further amplifies self-bias. To mitigate such biases, we discover that larger model size and external feedback with accurate assessment can significantly reduce bias in the self-refine pipeline, leading to actual performance improvement in downstream tasks. The code and data are released at https://github.com/xu1998hz/llm_self_bias.",
+      "source_xml": "data/xml/2024.acl.xml"
+    },
+    {
+      "id": "2024.eacl-long.86",
+      "bibkey": "zhou-etal-2024-diffusion",
+      "title": "Diffusion-NAT: Self-Prompting Discrete Diffusion for Non-Autoregressive Text Generation",
+      "authors": [
+        "Kun Zhou",
+        "Yifan Li",
+        "Xin Zhao",
+        "Ji-Rong Wen"
+      ],
+      "year": "2024",
+      "venue": "eacl",
+      "booktitle": "Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2024.eacl-long.86",
+      "url": "https://aclanthology.org/2024.eacl-long.86/",
+      "abstract": "Recently, continuous diffusion models (CDM) have been introduced into non-autoregressive (NAR) text-to-text generation. However, the discrete nature of text increases the difficulty of CDM to generate coherent and fluent texts, and also causes the incompatibility problem between CDM and advanced NLP techniques, especially the popular pre-trained language models (PLMs).To solve it, we propose Diffusion-NAT, which introduces discrete diffusion models (DDM) into NAR text-to-text generation and integrates BART to improve the performance.By revising the decoding process of BART and the typical settings of DDM, we unify the inference process of BART and the denoising process of DDM into the same NAR masked tokens recovering task.In this way, DDM can rely on BART to perform denoising, which can benefit from both the rich pre-learned knowledge of BART and the iterative refining paradigm of DDM.Besides, we also propose the iterative self-prompting strategy to further improve the generation quality.Experimental results on 7 datasets show that our approach can outperform competitive NAR methods, and even surpass autoregressive methods.Our code and data are released at https://github.com/RUCAIBox/DiffusionNAT.",
+      "source_xml": "data/xml/2024.eacl.xml"
+    },
+    {
+      "id": "2024.eacl-long.144",
+      "bibkey": "karimi-mahabadi-etal-2024-tess",
+      "title": "TESS: Text-to-Text Self-Conditioned Simplex Diffusion",
+      "authors": [
+        "Rabeeh Karimi Mahabadi",
+        "Hamish Ivison",
+        "Jaesung Tae",
+        "James Henderson",
+        "Iz Beltagy",
+        "Matthew Peters",
+        "Arman Cohan"
+      ],
+      "year": "2024",
+      "venue": "eacl",
+      "booktitle": "Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2024.eacl-long.144",
+      "url": "https://aclanthology.org/2024.eacl-long.144/",
+      "abstract": "Diffusion models have emerged as a powerful paradigm for generation, obtaining strong performance in various continuous domains. However, applying continuous diffusion models to natural language remains challenging due to its discrete nature and the need for a large number of diffusion steps to generate text, making diffusion-based generation expensive.In this work, we propose Text-to-text Self-conditioned Simplex Diffusion (TESS), a text diffusion model that is fully non-autoregressive, employs a new form of self-conditioning, and applies the diffusion process on the logit simplex space rather than the learned embedding space.Through extensive experiments on natural language understanding and generation tasks including summarization, text simplification, paraphrase generation, and question generation, we demonstrate that TESS outperforms state-of-the-art non-autoregressive models, requires fewer diffusion steps with minimal drop in performance, and is competitive with pretrained autoregressive sequence-to-sequence models.",
+      "source_xml": "data/xml/2024.eacl.xml"
+    },
+    {
+      "id": "2024.emnlp-main.109",
+      "bibkey": "chen-etal-2024-effective",
+      "title": "An Effective Deployment of Diffusion LM for Data Augmentation in Low-Resource Sentiment Classification",
+      "authors": [
+        "Zhuowei Chen",
+        "Lianxi Wang",
+        "Yuben Wu",
+        "Xinfeng Liao",
+        "Yujia Tian",
+        "Junyang Zhong"
+      ],
+      "year": "2024",
+      "venue": "emnlp",
+      "booktitle": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+      "doi": "10.18653/v1/2024.emnlp-main.109",
+      "url": "https://aclanthology.org/2024.emnlp-main.109/",
+      "abstract": "Sentiment classification (SC) often suffers from low-resource challenges such as domain-specific contexts, imbalanced label distributions, and few-shot scenarios. The potential of the diffusion language model (LM) for textual data augmentation (DA) remains unexplored, moreover, textual DA methods struggle to balance the diversity and consistency of new samples. Most DA methods either perform logical modifications or rephrase less important tokens in the original sequence with the language model. In the context of SC, strong emotional tokens could act critically on the sentiment of the whole sequence. Therefore, contrary to rephrasing less important context, we propose DiffusionCLS to leverage a diffusion LM to capture in-domain knowledge and generate pseudo samples by reconstructing strong label-related tokens. This approach ensures a balance between consistency and diversity, avoiding the introduction of noise and augmenting crucial features of datasets. DiffusionCLS also comprises a Noise-Resistant Training objective to help the model generalize. Experiments demonstrate the effectiveness of our method in various low-resource scenarios including domain-specific and domain-general problems. Ablation studies confirm the effectiveness of our framework\u2019s modules, and visualization studies highlight optimal deployment conditions, reinforcing our conclusions.",
+      "source_xml": "data/xml/2024.emnlp.xml"
+    },
+    {
+      "id": "2024.findings-acl.54",
+      "bibkey": "cheng-li-2024-diffuspoll",
+      "title": "DiffusPoll: Conditional Text Diffusion Model for Poll Generation",
+      "authors": [
+        "Le Cheng",
+        "Shuangyin Li"
+      ],
+      "year": "2024",
+      "venue": "findings",
+      "booktitle": "Findings of the Association for Computational Linguistics: ACL 2024",
+      "doi": "10.18653/v1/2024.findings-acl.54",
+      "url": "https://aclanthology.org/2024.findings-acl.54/",
+      "abstract": "Online social media platforms often gather user feedback through polls to enhance user engagement. Automatically generating polls from social media and its context can decrease the labor expenses of media workers and enhance workplace productivity. However, on social media platforms, there are internet water armies that manipulate public opinion through sheer numbers and causing the comments to be biased, drowning out minority views. In such circumstances, polls created based on biased comments often have limited types of options and poor coverage. Therefore, it is crucial to diversify the poll options and try to listen to the voices of the minority. To achieve this, we introduce DiffusPoll, a novel paradigm for poll generation based on a non-autoregressive diffusion model that can generate diversified and high-quality samples. Under the new paradigm, we design a task-specific mask strategy tailored to the inherent logic of polls to optimize controlled generation. Furthermore, we also leverage additional attribute tags from comments to enhance the generation quality. Experimental results indicate that DiffusPoll has achieved state-of-the-art performance in both the quality and diversity of poll generation tasks, and is more likely to hit the voices of minority.",
+      "source_xml": "data/xml/2024.findings.xml"
+    },
+    {
+      "id": "2024.findings-acl.281",
+      "bibkey": "liu-etal-2024-ra",
+      "title": "RA-ISF: Learning to Answer and Understand from Retrieval Augmentation via Iterative Self-Feedback",
+      "authors": [
+        "Yanming Liu",
+        "Xinyue Peng",
+        "Xuhong Zhang",
+        "Weihao Liu",
+        "Jianwei Yin",
+        "Jiannan Cao",
+        "Tianyu Du"
+      ],
+      "year": "2024",
+      "venue": "findings",
+      "booktitle": "Findings of the Association for Computational Linguistics: ACL 2024",
+      "doi": "10.18653/v1/2024.findings-acl.281",
+      "url": "https://aclanthology.org/2024.findings-acl.281/",
+      "abstract": "Large language models (LLMs) demonstrate exceptional performance in numerous tasks but still heavily rely on knowledge stored in their parameters. Moreover, updating this knowledge incurs high training costs. Retrieval-augmented generation (RAG) methods address this issue by integrating external knowledge. The model can answer questions it couldn\u2019t previously by retrieving knowledge relevant to the query. This approach improves performance in certain scenarios for specific tasks. However, if irrelevant texts are retrieved, it may impair model performance. In this paper, we propose Retrieval Augmented Iterative Self-Feedback (RA-ISF), a framework that iteratively decomposes tasks and processes them in three submodules to enhance the model\u2019s problem-solving capabilities. Experiments show that our method outperforms existing benchmarks, performing well on models like GPT3.5, Llama2, significantly enhancing factual reasoning capabilities and reducing hallucinations.",
+      "source_xml": "data/xml/2024.findings.xml"
+    },
+    {
+      "id": "2024.findings-acl.887",
+      "bibkey": "lovelace-etal-2024-diffusion",
+      "title": "Diffusion Guided Language Modeling",
+      "authors": [
+        "Justin Lovelace",
+        "Varsha Kishore",
+        "Yiwei Chen",
+        "Kilian Weinberger"
+      ],
+      "year": "2024",
+      "venue": "findings",
+      "booktitle": "Findings of the Association for Computational Linguistics: ACL 2024",
+      "doi": "10.18653/v1/2024.findings-acl.887",
+      "url": "https://aclanthology.org/2024.findings-acl.887/",
+      "abstract": "Current language models demonstrate remarkable proficiency in text generation. However, for many applications it is desirable to control attributes, such as sentiment, or toxicity, of the generated language\u2014ideally tailored towards each specific use case and target audience. For auto-regressive language models, existing guidance methods are prone to decoding errors that cascade during generation and degrade performance. In contrast, text diffusion models can easily be guided with, for example, a simple linear sentiment classifier\u2014however they do suffer from significantly higher perplexity than auto-regressive alternatives. In this paper we use a guided diffusion model to produce a latent proposal that steers an auto-regressive language model to generate text with desired properties. Our model inherits the unmatched fluency of the auto-regressive approach and the plug-and-play flexibility of diffusion. We show that it outperforms previous plug-and-play guidance methods across a wide range of benchmark data sets. Further, controlling a new attribute in our framework is reduced to training a single logistic regression classifier.",
+      "source_xml": "data/xml/2024.findings.xml"
+    },
+    {
+      "id": "2024.findings-emnlp.392",
+      "bibkey": "shin-etal-2024-generation",
+      "title": "From Generation to Selection: Findings of Converting Analogical Problem-Solving into Multiple-Choice Questions",
+      "authors": [
+        "Donghyeon Shin",
+        "Seungpil Lee",
+        "Klea Lena Kovacec",
+        "Sundong Kim"
+      ],
+      "year": "2024",
+      "venue": "findings",
+      "booktitle": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+      "doi": "10.18653/v1/2024.findings-emnlp.392",
+      "url": "https://aclanthology.org/2024.findings-emnlp.392/",
+      "abstract": "As artificial intelligence reasoning abilities gain prominence, generating reliable benchmarks becomes crucial. The Abstract and Reasoning Corpus (ARC) offers challenging problems yet unsolved by AI. While ARC effectively assesses reasoning, its generation-based evaluation overlooks other assessment aspects. Bloom\u2019s Taxonomy suggests evaluating six cognitive stages: Remember, Understand, Apply, Analyze, Evaluate, and Create. To extend ARC\u2019s focus beyond the Create stage, we developed MC-LARC, a multiple-choice format suitable for assessing stages like Understand and Apply in Large Language Models (LLMs). Our evaluation of ChatGPT4V\u2019s analogical reasoning using MC-LARC confirmed that this format supports LLMs\u2019 reasoning capabilities and facilitates evidence analysis. However, we observed LLMs using shortcuts in MC-LARC tasks. To address this, we propose a self-feedback framework where LLMs identify issues and generate improved options. MC-LARC is available at https://mc-larc.github.io/.",
+      "source_xml": "data/xml/2024.findings.xml"
+    },
+    {
+      "id": "2024.findings-emnlp.497",
+      "bibkey": "liu-etal-2024-enable",
+      "title": "Enable Fast Sampling for Seq2Seq Text Diffusion",
+      "authors": [
+        "Pan Liu",
+        "Xiaohua Tian",
+        "Zhouhan Lin"
+      ],
+      "year": "2024",
+      "venue": "findings",
+      "booktitle": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+      "doi": "10.18653/v1/2024.findings-emnlp.497",
+      "url": "https://aclanthology.org/2024.findings-emnlp.497/",
+      "abstract": "Diffusion models exhibit promising capacity for generating high-quality text. However, owing to the curved nature of generation path, they necessitate traversing numerous steps to guarantee the text quality. In this paper, we propose an efficient model FMSeq, which utilizes flow matching to straighten the generation path, thereby enabling fast sampling for diffusion-based seq2seq text generation. Specifically, we construct transport flow only on the target sequences to adapt the diffusion-based model with flow matching. Furthermore, we explore different settings and identify target-parameterization, self-conditioning and time-difference as three effective techniques to improve the generation quality under a few steps. Experiments on four popular tasks demonstrate that FMSeq generates texts of comparable quality to the SOTA diffusion-based DiffuSeq in just 10 steps, achieving a 200-fold speedup.",
+      "source_xml": "data/xml/2024.findings.xml"
+    },
+    {
+      "id": "2024.langmol-1.15",
+      "bibkey": "nguyen-etal-2024-lang2mol",
+      "title": "Lang2Mol-Diff: A Diffusion-Based Generative Model for Language-to-Molecule Translation Leveraging SELFIES Representation",
+      "authors": [
+        "Nguyen Doan Hieu Nguyen",
+        "Nhat Truong Pham",
+        "Duong Thanh Tran",
+        "Balachandran Manavalan"
+      ],
+      "year": "2024",
+      "venue": "langmol",
+      "booktitle": "Proceedings of the 1st Workshop on Language + Molecules (L+M 2024)",
+      "doi": "10.18653/v1/2024.langmol-1.15",
+      "url": "https://aclanthology.org/2024.langmol-1.15/",
+      "abstract": "Generating de novo molecules from textual descriptions is challenging due to potential issues with molecule validity in SMILES representation and limitations of autoregressive models. This work introduces Lang2Mol-Diff, a diffusion-based language-to-molecule generative model using the SELFIES representation. Specifically, Lang2Mol-Diff leverages the strengths of two state-of-the-art molecular generative models: BioT5 and TGM-DLM. By employing BioT5 to tokenize the SELFIES representation, Lang2Mol-Diff addresses the validity issues associated with SMILES strings. Additionally, it incorporates a text diffusion mechanism from TGM-DLM to overcome the limitations of autoregressive models in this domain. To the best of our knowledge, this is the first study to leverage the diffusion mechanism for text-based de novo molecule generation using the SELFIES molecular string representation. Performance evaluation on the L+M-24 benchmark dataset shows that Lang2Mol-Diff outperforms all existing methods for molecule generation in terms of validity. Our code and pre-processed data are available at https://github.com/nhattruongpham/mol-lang-bridge/tree/lang2mol/.",
+      "source_xml": "data/xml/2024.langmol.xml"
+    },
+    {
+      "id": "2024.lrec-main.493",
+      "bibkey": "ou-jian-2024-effective",
+      "title": "Effective Integration of Text Diffusion and Pre-Trained Language Models with Linguistic Easy-First Schedule",
+      "authors": [
+        "Yimin Ou",
+        "Ping Jian"
+      ],
+      "year": "2024",
+      "venue": "lrec",
+      "booktitle": "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",
+      "doi": "",
+      "url": "https://aclanthology.org/2024.lrec-main.493/",
+      "abstract": "Diffusion models have become a powerful generative modeling paradigm, achieving great success in continuous data patterns. However, the discrete nature of text data results in compatibility issues between continuous diffusion models (CDMs) and pre-trained language models (PLMs). That is, the performance of diffusion models even degrades when combined with PLMs. To alleviate this issue, we propose to utilize a pre-trained decoder to convert the denoised embedding vectors into natural language instead of using the widely used rounding operation. In this way, CDMs can be more effectively combined with PLMs. Additionally, considering that existing noise schedules in text diffusion models do not take into account the linguistic differences among tokens, which violates the easy-first policy for text generation, we propose a linguistic easy-first schedule that incorporates the measure of word importance, conforming to easy-first-generation linguistic features and bringing about improved generation quality. Experiment results on the E2E dataset and five controllable tasks show that our approach can combine the merits of CDMs and PLMs, significantly outperforming other diffusion-based models.",
+      "source_xml": "data/xml/2024.lrec.xml"
+    },
+    {
+      "id": "2024.lrec-main.535",
+      "bibkey": "luo-etal-2024-enhancing",
+      "title": "Enhancing Phrase Representation by Information Bottleneck Guided Text Diffusion Process for Keyphrase Extraction",
+      "authors": [
+        "Yuanzhen Luo",
+        "Qingyu Zhou",
+        "Feng Zhou"
+      ],
+      "year": "2024",
+      "venue": "lrec",
+      "booktitle": "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",
+      "doi": "",
+      "url": "https://aclanthology.org/2024.lrec-main.535/",
+      "abstract": "Keyphrase extraction (KPE) is an important task in Natural Language Processing for many scenarios, which aims to extract keyphrases that are present in a given document. Many existing supervised methods treat KPE as sequential labeling, span-level classification, or generative tasks. However, these methods lack the ability to utilize keyphrase information, which may result in biased results. In this study, we propose Diff-KPE, which leverages the supervised Variational Information Bottleneck (VIB) to guide the text diffusion process for generating enhanced keyphrase representations. Diff-KPE first generates the desired keyphrase embeddings conditioned on the entire document and then injects the generated keyphrase embeddings into each phrase representation. A ranking network and VIB are then optimized together with rank loss and classification loss, respectively. This design of Diff-KPE allows us to rank each candidate phrase by utilizing both the information of keyphrases and the document. Experiments show that Diff-KPE outperforms existing KPE methods on a large open domain keyphrase extraction benchmark, OpenKP, and a scientific domain dataset, KP20K.",
+      "source_xml": "data/xml/2024.lrec.xml"
+    },
+    {
+      "id": "2024.naacl-long.2",
+      "bibkey": "yuan-etal-2024-text",
+      "title": "Text Diffusion Model with Encoder-Decoder Transformers for Sequence-to-Sequence Generation",
+      "authors": [
+        "Hongyi Yuan",
+        "Zheng Yuan",
+        "Chuanqi Tan",
+        "Fei Huang",
+        "Songfang Huang"
+      ],
+      "year": "2024",
+      "venue": "naacl",
+      "booktitle": "Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2024.naacl-long.2",
+      "url": "https://aclanthology.org/2024.naacl-long.2/",
+      "abstract": "The diffusion model, a new generative modeling paradigm, has achieved great success in image, audio, and video generation.However, considering the discrete categorical nature of the text, it is not trivial to extend continuous diffusion models to natural language. In this work, we propose SeqDiffuSeq, a text diffusion model, to approach sequence-to-sequence text generation with an encoder-decoder Transformer architecture.To improve the generation performance, SeqDiffuSeq is equipped with the self-conditioning technique and our newly proposed adaptive noise schedule technique. Self-conditioning enables SeqDiffuSeq to better use the predicted sequence information during the generation process.The adaptive noise schedule balances the difficulty of denoising across time steps at the token level.Experiment results illustrate the improved performance on five sequence-to-sequence generation tasks compared to other diffusion-based models regarding text quality and inference time.",
+      "source_xml": "data/xml/2024.naacl.xml"
+    },
+    {
+      "id": "2024.naacl-long.23",
+      "bibkey": "lee-etal-2024-volcano",
+      "title": "Volcano: Mitigating Multimodal Hallucination through Self-Feedback Guided Revision",
+      "authors": [
+        "Seongyun Lee",
+        "Sue Hyun Park",
+        "Yongrae Jo",
+        "Minjoon Seo"
+      ],
+      "year": "2024",
+      "venue": "naacl",
+      "booktitle": "Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2024.naacl-long.23",
+      "url": "https://aclanthology.org/2024.naacl-long.23/",
+      "abstract": "Large multimodal models suffer from multimodal hallucination, where they provide incorrect responses misaligned with the given visual information. Recent works have conjectured that one of the reasons behind multimodal hallucination is due to the vision encoder failing to ground on the image properly. To mitigate this issue, we propose a novel approach that leverages self-feedback as visual cues. Building on this approach, we introduce Volcano, a multimodal self-feedback guided revision model. Volcano generates natural language feedback to its initial response based on the provided visual information and utilizes this feedback to self-revise its initial response. Volcano effectively reduces multimodal hallucination and achieves state-of-the-art on MMHal-Bench, POPE, and GAVIE. It also improves on general multimodal abilities and outperforms previous models on MM-Vet and MMBench. Through qualitative analysis, we show that Volcano\u2019s feedback is properly grounded on the image than the initial response. This indicates that Volcano can provide itself with richer visual information through feedback generation, leading to self-correct hallucinations. We publicly release our model, data, and code at https://github.com/kaistAI/Volcanogithub.com/kaistAI/Volcano",
+      "source_xml": "data/xml/2024.naacl.xml"
+    },
+    {
+      "id": "2024.naacl-long.119",
+      "bibkey": "liu-etal-2024-p3sum",
+      "title": "P^3Sum: Preserving Author\u2019s Perspective in News Summarization with Diffusion Language Models",
+      "authors": [
+        "Yuhan Liu",
+        "Shangbin Feng",
+        "Xiaochuang Han",
+        "Vidhisha Balachandran",
+        "Chan Young Park",
+        "Sachin Kumar",
+        "Yulia Tsvetkov"
+      ],
+      "year": "2024",
+      "venue": "naacl",
+      "booktitle": "Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2024.naacl-long.119",
+      "url": "https://aclanthology.org/2024.naacl-long.119/",
+      "abstract": "In this work, we take a first step towards designing summarization systems that are faithful to the author\u2019s intent, not only the semantic content of the article. Focusing on a case study of preserving political perspectives in news summarization, we find that existing approaches alter the political opinions and stances of news articles in more than 50% of summaries, misrepresenting the intent and perspectives of the news authors. We thus propose P^3Sum, a diffusion model-based summarization approach controlled by political perspective classifiers. In P^3Sum, the political leaning of a generated summary is iteratively evaluated at each decoding step, and any drift from the article\u2019s original stance incurs a loss back-propagated to the embedding layers, steering the political stance of the summary at inference time. Extensive experiments on three news summarization datasets demonstrate that P^3Sum outperforms state-of-the-art summarization systems and large language models by up to 13.7% in terms of the success rate of stance preservation, with competitive performance on standard metrics of summarization quality. Our findings present a first analysis of preservation of pragmatic features in summarization, highlight the lacunae in existing summarization models\u2014that even state-of-the-art models often struggle to preserve author\u2019s intents\u2014and develop new summarization systems that are more faithful to author\u2019s perspectives.",
+      "source_xml": "data/xml/2024.naacl.xml"
+    },
+    {
+      "id": "2024.naacl-long.215",
+      "bibkey": "zhang-etal-2024-languageflow",
+      "title": "LanguageFlow: Advancing Diffusion Language Generation with Probabilistic Flows",
+      "authors": [
+        "Shujian Zhang",
+        "Lemeng Wu",
+        "Chengyue Gong",
+        "Xingchao Liu"
+      ],
+      "year": "2024",
+      "venue": "naacl",
+      "booktitle": "Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2024.naacl-long.215",
+      "url": "https://aclanthology.org/2024.naacl-long.215/",
+      "abstract": "Recent works have demonstrated success in controlling sentence attributes (e.g., sentiment) and structure (e.g., syntactic structure) based on the diffusion language model. A key component that drives theimpressive performance for generating high-quality samples from noise is iteratively denoise for thousands of steps. While beneficial, the complexity of starting from the noise and the learning steps has limited its implementation to many NLP real-world applications. This paper proposes Language Rectified Flow (LF).Our method is based on the reformulation of the standard probabilistic flow models.Language rectified flow learns (neural) ordinary differentialequation models to transport between the source distribution and the target distribution, henceproviding a unified and effective solution to generative modeling and domain transfer.From the source distribution, our language rectified flow yields fast simulation and effectively decreases the inference time. Experiments on three challenging fine-grained control tasks and multiple high-quality text editing show that our method consistently outperforms its baselines. Extensive experiments and ablation studies demonstrate that our method can be general, effective, and beneficial for many NLP tasks.",
+      "source_xml": "data/xml/2024.naacl.xml"
+    },
+    {
+      "id": "2024.wmt-1.13",
+      "bibkey": "mynka-mikhaylovskiy-2024-tsu",
+      "title": "TSU HITS\u2019s Submissions to the WMT 2024 General Machine Translation Shared Task",
+      "authors": [
+        "Vladimir Mynka",
+        "Nikolay Mikhaylovskiy"
+      ],
+      "year": "2024",
+      "venue": "wmt",
+      "booktitle": "Proceedings of the Ninth Conference on Machine Translation",
+      "doi": "10.18653/v1/2024.wmt-1.13",
+      "url": "https://aclanthology.org/2024.wmt-1.13/",
+      "abstract": "This paper describes the TSU HITS team\u2019s submission system for the WMT\u201924 general translation task. We focused on exploring the capabilities of discrete diffusion models for the English-to-{Russian, German, Czech, Spanish} translation tasks in the constrained track. Our submission system consists of a set of discrete diffusion models for each language pair. The main advance is using a separate length regression model to determine the length of the output sequence more precisely.",
+      "source_xml": "data/xml/2024.wmt.xml"
+    },
+    {
+      "id": "2024.woah-1.13",
+      "bibkey": "reyes-ramirez-etal-2024-improving",
+      "title": "Improving aggressiveness detection using a data augmentation technique based on a Diffusion Language Model",
+      "authors": [
+        "Antonio D. Reyes-Ram\u00edrez",
+        "Mario Ezra Arag\u00f3n",
+        "Fernando S\u00e1nchez-Vega",
+        "A. Pastor L\u00f3pez-Monroy"
+      ],
+      "year": "2024",
+      "venue": "woah",
+      "booktitle": "Proceedings of the 8th Workshop on Online Abuse and Harms (WOAH 2024)",
+      "doi": "10.18653/v1/2024.woah-1.13",
+      "url": "https://aclanthology.org/2024.woah-1.13/",
+      "abstract": "Cyberbullying has grown in recent years, largely attributed to the proliferation of social media users. This phenomenon manifests in various forms, such as hate speech and offensive language, increasing the necessity of effective detection models to tackle this problem. Most approaches focus on supervised algorithms, which have an important drawback\u2014they heavily depend on the availability of ample training data. This paper attempts to tackle this insufficient data problem using data augmentation (DA) techniques. Concretely, we propose a novel data augmentation technique based on a Diffusion Language Model (DLA). We compare our proposed method against well-known DA techniques, such as contextual augmentation and Easy Data Augmentation (EDA). Our findings reveal a slight but promising improvement, leading to more robust results with very low variance. Additionally, we provide a comprehensive qualitative analysis using classification errors, and complementary analysis, shedding light on the nuances of our approach.",
+      "source_xml": "data/xml/2024.woah.xml"
+    },
+    {
+      "id": "2025.acl-long.210",
+      "bibkey": "zhu-etal-2025-segment",
+      "title": "Segment-Level Diffusion: A Framework for Controllable Long-Form Generation with Diffusion Language Models",
+      "authors": [
+        "Xiaochen Zhu",
+        "Georgi Karadzhov",
+        "Chenxi Whitehouse",
+        "Andreas Vlachos"
+      ],
+      "year": "2025",
+      "venue": "acl",
+      "booktitle": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2025.acl-long.210",
+      "url": "https://aclanthology.org/2025.acl-long.210/",
+      "abstract": "Diffusion models have shown promise in text generation, but often struggle with generating long, coherent, and contextually accurate text. Token-level diffusion doesn\u2019t model word-order dependencies explicitly and operates on short, fixed output windows, while passage-level diffusion struggles with learning robust representations for long-form text. To address these challenges, we propose Segment-Level Diffusion (SLD), a framework that enhances diffusion-based text generation through text segmentation, robust representation training with adversarial and contrastive learning, and improved latent-space guidance. By segmenting long-form outputs into multiple latent representations and decoding them with an autoregressive decoder, SLD simplifies diffusion predictions and improves scalability. Experiments on four datasets demonstrate that, when compared to other diffusion and autoregressive baselines SLD achieves competitive or superior fluency, coherence, and contextual compatibility in automatic and human evaluations.",
+      "source_xml": "data/xml/2025.acl.xml"
+    },
+    {
+      "id": "2025.acl-long.565",
+      "bibkey": "li-etal-2025-unifying",
+      "title": "Unifying Continuous and Discrete Text Diffusion with Non-simultaneous Diffusion Processes",
+      "authors": [
+        "Bocheng Li",
+        "Zhujin Gao",
+        "Linli Xu"
+      ],
+      "year": "2025",
+      "venue": "acl",
+      "booktitle": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2025.acl-long.565",
+      "url": "https://aclanthology.org/2025.acl-long.565/",
+      "abstract": "Diffusion models have emerged as a promising approach for text generation, with recent works falling into two main categories: discrete and continuous diffusion models. Discrete diffusion models apply token corruption independently using categorical distributions, allowing for different diffusion progress across tokens but lacking fine-grained control. Continuous diffusion models map tokens to continuous spaces and apply fine-grained noise, but the diffusion progress is uniform across tokens, limiting their ability to capture semantic nuances. To address these limitations, we propose Non-simultaneous Continuous Diffusion Models (NeoDiff), a novel diffusion model that integrates the strengths of both discrete and continuous approaches. NeoDiff introduces a Poisson diffusion process for the forward process, enabling a flexible and fine-grained noising paradigm, and employs a time predictor for the reverse process to adaptively modulate the denoising progress based on token semantics. Furthermore, NeoDiff utilizes an optimized schedule for inference to ensure more precise noise control and improved performance. Our approach unifies the theories of discrete and continuous diffusion models, offering a more principled and effective framework for text generation. Experimental results on several text generation tasks demonstrate NeoDiff\u2019s superior performance compared to baselines of non-autoregressive continuous and discrete diffusion models, iterative-based methods and autoregressive diffusion-based methods. These results highlight NeoDiff\u2019s potential as a powerful tool for generating high-quality text and advancing the field of diffusion-based text generation.",
+      "source_xml": "data/xml/2025.acl.xml"
+    },
+    {
+      "id": "2025.acl-long.993",
+      "bibkey": "du-etal-2025-planning",
+      "title": "Planning with Diffusion Models for Target-Oriented Dialogue Systems",
+      "authors": [
+        "Hanwen Du",
+        "Bo Peng",
+        "Xia Ning"
+      ],
+      "year": "2025",
+      "venue": "acl",
+      "booktitle": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2025.acl-long.993",
+      "url": "https://aclanthology.org/2025.acl-long.993/",
+      "abstract": "Target-Oriented Dialogue (TOD) remains a significant challenge in the LLM era, where strategic dialogue planning is crucial for directing conversations toward specific targets. However, existing dialogue planning methods generate dialogue plans in a step-by-step sequential manner, and may suffer from compounding errors and myopic actions. To address these limitations, we introduce a novel dialogue planning framework, DiffTOD, which leverages diffusion models to enable non-sequential dialogue planning. DiffTOD formulates dialogue planning as a trajectory generation problem with conditional guidance, and leverages a diffusion language model to estimate the likelihood of the dialogue trajectory. To optimize the dialogue action strategies, DiffTOD introduces three tailored guidance mechanisms for different target types, offering flexible guidance toward diverse TOD targets at test time. Extensive experiments across three diverse TOD settings show that DiffTOD can effectively perform non-myopic lookahead exploration and optimize action strategies over a long horizon through non-sequential dialogue planning, and demonstrates strong flexibility across complex and diverse dialogue scenarios. Our code and data are accessible through https://github.com/ninglab/DiffTOD.",
+      "source_xml": "data/xml/2025.acl.xml"
+    },
+    {
+      "id": "2025.acl-long.1029",
+      "bibkey": "tae-etal-2025-tess",
+      "title": "TESS 2: A Large-Scale Generalist Diffusion Language Model",
+      "authors": [
+        "Jaesung Tae",
+        "Hamish Ivison",
+        "Sachin Kumar",
+        "Arman Cohan"
+      ],
+      "year": "2025",
+      "venue": "acl",
+      "booktitle": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2025.acl-long.1029",
+      "url": "https://aclanthology.org/2025.acl-long.1029/",
+      "abstract": "We introduce TESS 2, a general instruction-following diffusion language model that outperforms contemporary instruction-tuned diffusion models, as well as matches and sometimes exceeds strong autoregressive (AR) models. We train TESS 2 by first adapting a strong AR model via continued pretraining with a diffusion loss and then performing further instruction tuning. We find that adaptation training as well as the choice of the base model is crucial for training good instruction-following diffusion models. We further propose reward guidance, a novel and modular inference-time guidance procedure to align model outputs without needing to train the underlying model. Finally, we show that TESS 2 further improves with increased inference-time compute, highlighting the utility of diffusion LMs in having fine-grained controllability over the amount of compute used at inference time.",
+      "source_xml": "data/xml/2025.acl.xml"
+    },
+    {
+      "id": "2025.acl-long.1111",
+      "bibkey": "lee-etal-2025-editext",
+      "title": "EdiText: Controllable Coarse-to-Fine Text Editing with Diffusion Language Models",
+      "authors": [
+        "Che Hyun Lee",
+        "Heeseung Kim",
+        "Jiheum Yeom",
+        "Sungroh Yoon"
+      ],
+      "year": "2025",
+      "venue": "acl",
+      "booktitle": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2025.acl-long.1111",
+      "url": "https://aclanthology.org/2025.acl-long.1111/",
+      "abstract": "We propose EdiText, a controllable text editing method that modifies the reference text to desired attributes at various scales. We integrate an SDEdit-based editing technique that allows for broad adjustments in the degree of text editing. Additionally, we introduce a novel fine-level editing method based on self-conditioning, which allows subtle control of reference text. While being capable of editing on its own, this fine-grained method, integrated with the SDEdit approach, enables EdiText to make precise adjustments within the desired range. EdiText demonstrates its controllability to robustly adjust reference text at a broad range of levels across various tasks, including toxicity control and sentiment control.",
+      "source_xml": "data/xml/2025.acl.xml"
+    },
+    {
+      "id": "2025.babylm-main.38",
+      "bibkey": "kosmopoulou-etal-2025-masked",
+      "title": "Masked Diffusion Language Models with Frequency-Informed Training",
+      "authors": [
+        "Despoina Kosmopoulou",
+        "Efthymios Georgiou",
+        "Vaggelis Dorovatas",
+        "Georgios Paraskevopoulos",
+        "Alexandros Potamianos"
+      ],
+      "year": "2025",
+      "venue": "babylm",
+      "booktitle": "Proceedings of the First BabyLM Workshop",
+      "doi": "10.18653/v1/2025.babylm-main.38",
+      "url": "https://aclanthology.org/2025.babylm-main.38/",
+      "abstract": "We present a masked diffusion language modeling framework for data-efficient training for the BabyLM 2025 Challenge. Our approach applies diffusion training objectives to language modeling under strict data constraints, incorporating frequency-informed masking that prioritizes learning from rare tokens while maintaining theoretical validity. We explore multiple noise scheduling strategies, including two-mode approaches, and investigate different noise weighting schemes within the NELBO objective. We evaluate our method on the BabyLM benchmark suite, measuring linguistic competence, world knowledge, and human-likeness. Results show performance competitive to hybrid autoregressive-masked baselines, demonstrating that diffusion-based training offers a viable alternative for data-restricted language learning.",
+      "source_xml": "data/xml/2025.babylm.xml"
+    },
+    {
+      "id": "2025.coling-main.77",
+      "bibkey": "wang-etal-2025-cross",
+      "title": "Cross-Refine: Improving Natural Language Explanation Generation by Learning in Tandem",
+      "authors": [
+        "Qianli Wang",
+        "Tatiana Anikina",
+        "Nils Feldhus",
+        "Simon Ostermann",
+        "Sebastian M\u00f6ller",
+        "Vera Schmitt"
+      ],
+      "year": "2025",
+      "venue": "coling",
+      "booktitle": "Proceedings of the 31st International Conference on Computational Linguistics",
+      "doi": "",
+      "url": "https://aclanthology.org/2025.coling-main.77/",
+      "abstract": "Natural language explanations (NLEs) are vital for elucidating the reasoning behind large language model (LLM) decisions. Many techniques have been developed to generate NLEs using LLMs. However, like humans, LLMs might not always produce optimal NLEs on first attempt. Inspired by human learning processes, we introduce Cross-Refine, which employs role modeling by deploying two LLMs as generator and critic, respectively. The generator outputs a first NLE and then refines this initial explanation using feedback and suggestions provided by the critic. Cross-Refine does not require any supervised training data or additional training. We validate Cross-Refine across three NLP tasks using three state-of-the-art open-source LLMs through automatic and human evaluation. We select Self-Refine (Madaan et al., 2023) as the baseline, which only utilizes self-feedback to refine the explanations. Our findings from automatic evaluation and a user study indicate that Cross-Refine outperforms Self-Refine. Meanwhile, Cross-Refine can perform effectively with less powerful LLMs, whereas Self-Refine only yields strong results with ChatGPT. Additionally, we conduct an ablation study to assess the importance of feedback and suggestions. Both of them play an important role in refining explanations. We further evaluate Cross-Refine on a bilingual dataset in English and German.",
+      "source_xml": "data/xml/2025.coling.xml"
+    },
+    {
+      "id": "2025.coling-main.477",
+      "bibkey": "asada-miwa-2025-addressing",
+      "title": "Addressing the Training-Inference Discrepancy in Discrete Diffusion for Text Generation",
+      "authors": [
+        "Masaki Asada",
+        "Makoto Miwa"
+      ],
+      "year": "2025",
+      "venue": "coling",
+      "booktitle": "Proceedings of the 31st International Conference on Computational Linguistics",
+      "doi": "",
+      "url": "https://aclanthology.org/2025.coling-main.477/",
+      "abstract": "This study addresses the discrepancy between training and inference in discrete diffusion models for text generation. We propose two novel strategies: (1) a training schema that considers two-step diffusion processes, allowing the model to use its own predicted output as input for subsequent steps during training and (2) a scheduling technique that gradually increases the probability of using self-generated text as training progresses. Experiments conducted on four widely used text generation benchmark datasets demonstrate that both proposed strategies improve the performance of discrete diffusion models in text generation.",
+      "source_xml": "data/xml/2025.coling.xml"
+    },
+    {
+      "id": "2025.emnlp-main.213",
+      "bibkey": "zhang-etal-2025-diffusion",
+      "title": "Diffusion vs. Autoregressive Language Models: A Text Embedding Perspective",
+      "authors": [
+        "Siyue Zhang",
+        "Yilun Zhao",
+        "Liyuan Geng",
+        "Arman Cohan",
+        "Anh Tuan Luu",
+        "Chen Zhao"
+      ],
+      "year": "2025",
+      "venue": "emnlp",
+      "booktitle": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "doi": "10.18653/v1/2025.emnlp-main.213",
+      "url": "https://aclanthology.org/2025.emnlp-main.213/",
+      "abstract": "Large language model (LLM)-based embedding models, benefiting from large scale pre-training and post-training, have begun to surpass BERT and T5-based models on general-purpose text embedding tasks such as document retrieval. However, a fundamental limitation of LLM embeddings lies in the unidirectional attention used during autoregressive pre-training, which misaligns with the bidirectional nature of text embedding tasks. To this end, We propose adopting diffusion language models for text embeddings, motivated by their inherent bidirectional architecture and recent success in matching or surpassing LLMs especially on reasoning tasks. We present the first systematic study of the diffusion language embedding model, which outperforms the LLM-based embedding model by 20% on long-document retrieval, 8% on reasoning-intensive retrieval, 2% on instruction-following retrieval, and achieve competitive performance on traditional text embedding benchmarks. Our analysis verifies that bidirectional attention is crucial for encoding global context in long and complex text.",
+      "source_xml": "data/xml/2025.emnlp.xml"
+    },
+    {
+      "id": "2025.emnlp-main.427",
+      "bibkey": "wang-atanasova-2025-self",
+      "title": "Self-Critique and Refinement for Faithful Natural Language Explanations",
+      "authors": [
+        "Yingming Wang",
+        "Pepa Atanasova"
+      ],
+      "year": "2025",
+      "venue": "emnlp",
+      "booktitle": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "doi": "10.18653/v1/2025.emnlp-main.427",
+      "url": "https://aclanthology.org/2025.emnlp-main.427/",
+      "abstract": "With the rapid development of Large Language Models (LLMs), Natural Language Explanations (NLEs) have become increasingly important for understanding model predictions. However, these explanations often fail to faithfully represent the model\u2019s actual reasoning process. While existing work has demonstrated that LLMs can self-critique and refine their initial outputs for various tasks, this capability remains unexplored for improving explanation faithfulness. To address this gap, we introduce Self-critique and Refinement for Natural Language Explanations (SR-NLE), a framework that enables models to improve the faithfulness of their own explanations \u2013 specifically, post-hoc NLEs \u2013 through an iterative critique and refinement process without external supervision. Our framework leverages different feedback mechanisms to guide the refinement process, including natural language self-feedback and, notably, a novel feedback approach based on feature attribution that highlights important input words. Our experiments across three datasets and four state-of-the-art LLMs demonstrate that SR-NLE significantly reduces unfaithfulness rates, with our best method achieving an average unfaithfulness rate of 36.02%, compared to 54.81% for baseline \u2013 an absolute reduction of 18.79%. These findings reveal that the investigated LLMs can indeed refine their explanations to better reflect their actual reasoning process, requiring only appropriate guidance through feedback without additional training or fine-tuning.",
+      "source_xml": "data/xml/2025.emnlp.xml"
+    },
+    {
+      "id": "2025.emnlp-main.450",
+      "bibkey": "koh-etal-2025-conditional",
+      "title": "Conditional [MASK] Discrete Diffusion Language Model",
+      "authors": [
+        "Hyukhun Koh",
+        "Minha Jhang",
+        "Dohyung Kim",
+        "Sangmook Lee",
+        "Kyomin Jung"
+      ],
+      "year": "2025",
+      "venue": "emnlp",
+      "booktitle": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "doi": "10.18653/v1/2025.emnlp-main.450",
+      "url": "https://aclanthology.org/2025.emnlp-main.450/",
+      "abstract": "Although auto-regressive models excel in natural language processing, they often struggle to generate diverse text and provide limited controllability. Non-auto-regressive methods could be an alternative but often produce degenerate outputs and exhibit shortcomings in conditional generation. To address these challenges, we propose Diffusion-EAGS, a novel framework that integrates conditional masked language models into diffusion language models through the theoretical lens of a conditional Markov Random Field. In doing so, we propose entropy-adaptive Gibbs sampling and entropy-based noise scheduling to counterbalance each model\u2019s shortcomings. Experimental results show that Diffusion-EAGS outperforms baselines and achieves the best quality-diversity tradeoff, demonstrating its effectiveness in non-autoregressive text generation.",
+      "source_xml": "data/xml/2025.emnlp.xml"
+    },
+    {
+      "id": "2025.emnlp-main.486",
+      "bibkey": "kasa-etal-2025-generative",
+      "title": "Generative or Discriminative? Revisiting Text Classification in the Era of Transformers",
+      "authors": [
+        "Siva Rajesh Kasa",
+        "Karan Gupta",
+        "Sumegh Roychowdhury",
+        "Ashutosh Kumar",
+        "Yaswanth Biruduraju",
+        "Santhosh Kumar Kasa",
+        "Pattisapu Nikhil Priyatam",
+        "Arindam Bhattacharya",
+        "Shailendra Agarwal",
+        "Vijay Huddar"
+      ],
+      "year": "2025",
+      "venue": "emnlp",
+      "booktitle": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "doi": "10.18653/v1/2025.emnlp-main.486",
+      "url": "https://aclanthology.org/2025.emnlp-main.486/",
+      "abstract": "*The comparison between discriminative and generative classifiers has intrigued researchers since [Efron (1975)\u2019s](https://www.jstor.org/stable/2285453) seminal analysis of logistic regression versus discriminant analysis. While early theoretical work established that generative classifiers exhibit lower sample complexity but higher asymptotic error in simple linear settings, these trade-offs remain unexplored in the transformer era. We present the first comprehensive evaluation of modern generative and discriminative architectures\u2014Auto-regressive, Masked Language Modeling, Discrete Diffusion, and Encoders for text classification. Our study reveals that the classical \u201ctwo regimes\u201d phenomenon manifests distinctly across different architectures and training paradigms. Beyond accuracy, we analyze sample efficiency, calibration, noise robustness, and ordinality across diverse scenarios. Our findings offer practical guidance for selecting the most suitable modeling approach based on real-world constraints such as latency and data limitations.*",
+      "source_xml": "data/xml/2025.emnlp.xml"
+    },
+    {
+      "id": "2025.emnlp-main.1128",
+      "bibkey": "wang-etal-2025-diffusionattacker",
+      "title": "DiffusionAttacker: Diffusion-Driven Prompt Manipulation for LLM Jailbreak",
+      "authors": [
+        "Hao Wang",
+        "Hao Li",
+        "Junda Zhu",
+        "Xinyuan Wang",
+        "Chengwei Pan",
+        "Minlie Huang",
+        "Lei Sha"
+      ],
+      "year": "2025",
+      "venue": "emnlp",
+      "booktitle": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "doi": "10.18653/v1/2025.emnlp-main.1128",
+      "url": "https://aclanthology.org/2025.emnlp-main.1128/",
+      "abstract": "Large Language Models (LLMs) are susceptible to generating harmful content when prompted with carefully crafted inputs, a vulnerability known as LLM jailbreaking. As LLMs become more powerful, studying jailbreak methods is critical to enhancing security and aligning models with human values. Traditionally, jailbreak techniques have relied on suffix addition or prompt templates, but these methods suffer from limited attack diversity. This paper introduces DiffusionAttacker, an end-to-end generative approach for jailbreak rewriting inspired by diffusion models. Our method employs a sequence-to-sequence (seq2seq) text diffusion model as a generator, conditioning on the original prompt and guiding the denoising process with a novel attack loss. Unlike previous approaches that use autoregressive LLMs to generate jailbreak prompts, which limit the modification of already generated tokens and restrict the rewriting space, DiffusionAttacker utilizes a seq2seq diffusion model, allowing more flexible token modifications. This approach preserves the semantic content of the original prompt while producing harmful content. Additionally, we leverage the Gumbel-Softmax technique to make the sampling process from the diffusion model\u2019s output distribution differentiable, eliminating the need for iterative token search. Extensive experiments on Advbench and Harmbench demonstrate that DiffusionAttacker outperforms previous methods across various evaluation metrics, including attack success rate (ASR), fluency, and diversity.",
+      "source_xml": "data/xml/2025.emnlp.xml"
+    },
+    {
+      "id": "2025.emnlp-main.1597",
+      "bibkey": "zhang-etal-2025-flexible",
+      "title": "Flexible-length Text Infilling for Discrete Diffusion Models",
+      "authors": [
+        "Andrew Zhang",
+        "Anushka Sivakumar",
+        "Chia-Wei Tang",
+        "Chris Thomas"
+      ],
+      "year": "2025",
+      "venue": "emnlp",
+      "booktitle": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+      "doi": "10.18653/v1/2025.emnlp-main.1597",
+      "url": "https://aclanthology.org/2025.emnlp-main.1597/",
+      "abstract": "Discrete diffusion models are a new class of text generators that offer advantages such as bidirectional context use, parallelizable generation, and flexible prompting compared to autoregressive models. However, a critical limitation of discrete diffusion models is their inability to perform flexible-length or flexible-position text infilling without access to ground-truth positional data. We introduce DDOT (Discrete Diffusion with Optimal Transport Position Coupling), the first discrete diffusion model to overcome this challenge. DDOT jointly denoises token values and token positions, employing a novel sample-level Optimal Transport (OT) coupling. This coupling preserves relative token ordering while dynamically adjusting the positions and length of infilled segments, a capability previously missing in text diffusion. Our method is orthogonal to existing discrete text diffusion methods and is compatible with various pretrained text denoisers. Extensive experiments on text infilling benchmarks such as One-Billion-Word and Yelp demonstrate that DDOT outperforms naive diffusion baselines. Furthermore, DDOT achieves performance on par with state-of-the-art non-autoregressive models and enables significant improvements in training efficiency and flexibility.",
+      "source_xml": "data/xml/2025.emnlp.xml"
+    },
+    {
+      "id": "2025.findings-naacl.218",
+      "bibkey": "feng-etal-2025-tear",
+      "title": "TEaR: Improving LLM-based Machine Translation with Systematic Self-Refinement",
+      "authors": [
+        "Zhaopeng Feng",
+        "Yan Zhang",
+        "Hao Li",
+        "Bei Wu",
+        "Jiayu Liao",
+        "Wenqiang Liu",
+        "Jun Lang",
+        "Yang Feng",
+        "Jian Wu",
+        "Zuozhu Liu"
+      ],
+      "year": "2025",
+      "venue": "findings",
+      "booktitle": "Findings of the Association for Computational Linguistics: NAACL 2025",
+      "doi": "10.18653/v1/2025.findings-naacl.218",
+      "url": "https://aclanthology.org/2025.findings-naacl.218/",
+      "abstract": "Large Language Models (LLMs) have achieved impressive results in Machine Translation (MT). However, human evaluations reveal that LLM-generated translations still contain various errors. Notably, feeding the error information back into the LLMs can facilitate self-refinement, leading to enhanced translation quality. Motivated by these findings, we introduce TEaR (Translate, Estimate, and Refine), a systematic LLM-based self-refinement framework aimed at bootstrapping translation performance. Our key results show that: 1) TEaR framework enables LLMs to improve their translation quality relying solely on self-feedback, measured by both automatic metrics and Multidimensional Quality Metrics (MQM) scores; 2) TEaR autonomously selects improvements, ensuring a robust translation quality baseline while outperforming both internal refinement and external feedback methods. Error analysis and iterative refinement experiments show its ability to continuously reduce translation errors and enhance overall translation quality. Our code and data are publicly available at https://github.com/fzp0424/self_correct_mt.",
+      "source_xml": "data/xml/2025.findings.xml"
+    },
+    {
+      "id": "2025.findings-naacl.352",
+      "bibkey": "dat-etal-2025-discrete",
+      "title": "Discrete Diffusion Language Model for Efficient Text Summarization",
+      "authors": [
+        "Do Huu Dat",
+        "Duc Anh Do",
+        "Anh Tuan Luu",
+        "Wray Buntine"
+      ],
+      "year": "2025",
+      "venue": "findings",
+      "booktitle": "Findings of the Association for Computational Linguistics: NAACL 2025",
+      "doi": "10.18653/v1/2025.findings-naacl.352",
+      "url": "https://aclanthology.org/2025.findings-naacl.352/",
+      "abstract": "While diffusion models excel at conditionally generating high-quality images, prior works in discrete diffusion models were not evaluated on conditional long-text generation. This work addresses the limitations of prior discrete diffusion models for conditional long-text generation, particularly in the long abstractive summarization task. Despite faster decoding speeds compared to autoregressive methods, previous discrete diffusion models failed on the abstractive summarization task due to the incompatibility between the backbone architectures and the random noising process. To overcome these challenges, we introduce a novel semantic-aware noising process that enables Transformer backbones to handle long sequences effectively. Additionally, we propose CrossMamba, an adaptation of the Mamba model to the encoder-decoder paradigm, which integrates seamlessly with the random absorbing noising process. Our approaches outperform existing discrete diffusion models on three benchmark summarization datasets: Gigaword, CNN/DailyMail, and Arxiv, while also achieving much faster inference speed compared to autoregressive models.",
+      "source_xml": "data/xml/2025.findings.xml"
+    },
+    {
+      "id": "2025.findings-acl.1061",
+      "bibkey": "zhou-etal-2025-difflm",
+      "title": "DiffLM: Controllable Synthetic Data Generation via Diffusion Language Models",
+      "authors": [
+        "Ying Zhou",
+        "Xinyao Wang",
+        "Yulei Niu",
+        "Yaojie Shen",
+        "Lexin Tang",
+        "Fan Chen",
+        "Ben He",
+        "Le Sun",
+        "Longyin Wen"
+      ],
+      "year": "2025",
+      "venue": "findings",
+      "booktitle": "Findings of the Association for Computational Linguistics: ACL 2025",
+      "doi": "10.18653/v1/2025.findings-acl.1061",
+      "url": "https://aclanthology.org/2025.findings-acl.1061/",
+      "abstract": "Recent advancements in large language models (LLMs) have significantly enhanced their knowledge and generative capabilities, leading to a surge of interest in leveraging LLMs for high-quality data synthesis. However, synthetic data generation via prompting LLMs remains challenging due to LLMs\u2019 limited understanding of target data distributions and the complexity of prompt engineering, especially for structured formatted data. To address these issues, we introduce DiffLM, a controllable data synthesis framework based on variational autoencoder (VAE), which further (1) leverages diffusion models to reserve more information of original distribution and format structure in the learned latent distribution and (2) decouples the learning of target distribution knowledge from the LLM\u2019s generative objectives via a plug-and-play latent feature injection module. As we observed significant discrepancies between the VAE\u2019s latent representations and the real data distribution, the latent diffusion module is introduced into our framework to learn a fully expressive latent distribution. Evaluations on seven real-world datasets with structured formatted data (i.e., Tabular, Code, and Tool data) demonstrate that DiffLM generates high-quality data, with performance on downstream tasks surpassing that of real data by 2%\u20137% in certain cases. Data and code are available at https://github.com/bytedance/DiffLM.",
+      "source_xml": "data/xml/2025.findings.xml"
+    },
+    {
+      "id": "2025.findings-emnlp.524",
+      "bibkey": "choi-etal-2025-dub",
+      "title": "Dub-S2ST: Textless Speech-to-Speech Translation for Seamless Dubbing",
+      "authors": [
+        "Jeongsoo Choi",
+        "Jaehun Kim",
+        "Joon Son Chung"
+      ],
+      "year": "2025",
+      "venue": "findings",
+      "booktitle": "Findings of the Association for Computational Linguistics: EMNLP 2025",
+      "doi": "10.18653/v1/2025.findings-emnlp.524",
+      "url": "https://aclanthology.org/2025.findings-emnlp.524/",
+      "abstract": "This paper introduces a cross-lingual dubbing system that translates speech from one language to another while preserving key characteristics such as duration, speaker identity, and speaking speed. Despite the strong translation quality of existing speech translation approaches, they often overlook the transfer of speech patterns, leading to mismatches with source speech and limiting their suitability for dubbing applications. To address this, we propose a discrete diffusion-based speech-to-unit translation model with explicit duration control, enabling time-aligned translation. We then synthesize speech based on the translated units and source speaker\u2019s identity using a conditional flow matching model. Additionally, we introduce a unit-based speed adaptation mechanism that guides the translation model to produce speech at a rate consistent with the source, without relying on any text. Extensive experiments demonstrate that our framework generates natural and fluent translations that align with the original speech\u2019s duration and speaking pace, while achieving competitive translation performance.",
+      "source_xml": "data/xml/2025.findings.xml"
+    },
+    {
+      "id": "2025.findings-emnlp.1376",
+      "bibkey": "feng-etal-2025-masked",
+      "title": "Masked Diffusion Captioning for Visual Feature Learning",
+      "authors": [
+        "Chao Feng",
+        "Zihao Wei",
+        "Andrew Owens"
+      ],
+      "year": "2025",
+      "venue": "findings",
+      "booktitle": "Findings of the Association for Computational Linguistics: EMNLP 2025",
+      "doi": "10.18653/v1/2025.findings-emnlp.1376",
+      "url": "https://aclanthology.org/2025.findings-emnlp.1376/",
+      "abstract": "We learn visual features by captioning images with an image-conditioned masked diffusion language model, a formulation we call masked diffusion captioning (MDC). During training, text tokens in each image\u2013caption pair are masked at a randomly chosen ratio, and a decoder conditioned on visual features is trained to reconstruct the original text. After training, the learned visual features can be applied to downstream vision tasks. Unlike autoregressive captioning, the strength of the visual learning signal in MDC does not depend on each token\u2019s position in the sequence, reducing the need for auxiliary objectives. Linear probing experiments across a variety of academic-scale models and datasets show that the learned visual features are competitive with those produced by autoregressive and contrastive approaches.",
+      "source_xml": "data/xml/2025.findings.xml"
+    },
+    {
+      "id": "2025.naacl-long.601",
+      "bibkey": "christopher-etal-2025-speculative",
+      "title": "Speculative Diffusion Decoding: Accelerating Language Generation through Diffusion",
+      "authors": [
+        "Jacob K Christopher",
+        "Brian R. Bartoldson",
+        "Tal Ben-Nun",
+        "Michael Cardei",
+        "Bhavya Kailkhura",
+        "Ferdinando Fioretto"
+      ],
+      "year": "2025",
+      "venue": "naacl",
+      "booktitle": "Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2025.naacl-long.601",
+      "url": "https://aclanthology.org/2025.naacl-long.601/",
+      "abstract": "Speculative decoding has emerged as a widely adopted method to accelerate large language model inference without sacrificing the quality of the model outputs. While this technique has facilitated notable speed improvements by enabling parallel sequence verification, its efficiency remains inherently limited by the reliance on incremental token generation in existing draft models. To overcome this limitation, this paper proposes an adaptation of speculative decoding which uses discrete diffusion models to generate draft sequences. This allows parallelization of both the drafting and verification steps, providing significant speedups to the inference process. Our proposed approach, *Speculative Diffusion Decoding (SpecDiff)*, is validated on standard language generation benchmarks and empirically demonstrated to provide up to 7.2x speedups over standard generation processes and up to 1.75x speedups over existing speculative decoding approaches.",
+      "source_xml": "data/xml/2025.naacl.xml"
+    },
+    {
+      "id": "2025.realm-1.18",
+      "bibkey": "k-etal-2025-study",
+      "title": "A Study on Leveraging Search and Self-Feedback for Agent Reasoning",
+      "authors": [
+        "Karthikeyan K",
+        "Michelle Yuan",
+        "Elman Mansimov",
+        "Katerina Margatina",
+        "Anurag Pratik",
+        "Daniele Bonadiman",
+        "Monica Sunkara",
+        "Yi Zhang",
+        "Yassine Benajiba"
+      ],
+      "year": "2025",
+      "venue": "realm",
+      "booktitle": "Proceedings of the 1st Workshop for Research on Agent Language Models (REALM 2025)",
+      "doi": "10.18653/v1/2025.realm-1.18",
+      "url": "https://aclanthology.org/2025.realm-1.18/",
+      "abstract": "Recent works have demonstrated that incorporating search during inference can significantly improve reasoning capabilities of language agents. Some approaches may make use of the ground truth or rely on model\u2019s own generated feedback. The search algorithm uses this feedback to then produce values that will update its criterion for exploring and exploiting various reasoning paths. In this study, we investigate how search and model\u2019s self-feedback can be leveraged for reasoning tasks. First, we explore differences in ground-truth feedback and self-feedback during search for math reasoning. Second, we observe limitations in applying search techniques to more complex tasks like tool-calling and design domain-specific approaches to address these gaps. Our experiments reveal challenges related to generalization when solely relying on self-feedback during search. For search to work effectively, either access to the ground-truth is needed or feedback mechanisms need to be carefully designed for the specific task.",
+      "source_xml": "data/xml/2025.realm.xml"
+    },
+    {
+      "id": "2026.eacl-long.257",
+      "bibkey": "shankar-2026-pseudo",
+      "title": "Pseudo-Likelihood Training for Reasoning Diffusion Language Models",
+      "authors": [
+        "Shiv Shankar"
+      ],
+      "year": "2026",
+      "venue": "eacl",
+      "booktitle": "Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2026.eacl-long.257",
+      "url": "https://aclanthology.org/2026.eacl-long.257/",
+      "abstract": "Policy-gradient reinforcement learning (PGRL) forms the backbone of current methods used to enhance alignment and reasoning in Large Language Models (LLMs). However, these methods are incompatible with diffusion based language models (dLLMs). Most attempts to apply PGRL to dLLMs, are either not scalable or use unprincipled approximations. This work, introduces PADRE a framework that uses a novel pseudo-likelihood based objective for alignment of dLLMs. Our objective has the same optima as PGRL based optimization, but does not need to evaluate exact likelihood from dLLMs. Experiments on various coding and mathematical reasoning benchmarks show that our method matches or surpasses the performance of recent dLLM training baselines such as diffu-GRPO/d1. Our approach provides a stable and practical alternative for RL-based fine-tuning of reasoning-focused dLLMs.",
+      "source_xml": "data/xml/2026.eacl.xml"
+    },
+    {
+      "id": "2026.eacl-long.314",
+      "bibkey": "asada-miwa-2026-principled",
+      "title": "Principled Self-Correction in Discrete Diffusion: A UCB-Guided Framework for Text Generation",
+      "authors": [
+        "Masaki Asada",
+        "Makoto Miwa"
+      ],
+      "year": "2026",
+      "venue": "eacl",
+      "booktitle": "Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "doi": "10.18653/v1/2026.eacl-long.314",
+      "url": "https://aclanthology.org/2026.eacl-long.314/",
+      "abstract": "Inspired by their success in image synthesis, diffusion models offer a flexible, iterative alternative to rigid left-to-right text generation. However, a fundamental training-inference discrepancy hinders their performance: models are trained on corrupted ground-truth tokens, but at inference time they must denoise inputs corrupted from their own predictions. To bridge this gap, we propose a unified framework. First, Deeper Self-Prediction (DSP) is a multi-step training objective that teaches robust self-correction by forcing the model to denoise its own intermediate outputs. Second, UCB-guided Decoding is a principled inference algorithm that frames token re-masking as a multi-armed bandit problem, using the Upper Confidence Bound (UCB) to balance exploration and exploitation. Experiments on text generation tasks demonstrate consistent improvements over existing diffusion baselines. The framework achieves higher faithfulness and coherence according to both automatic metrics and LLM-as-a-Judge evaluations.",
+      "source_xml": "data/xml/2026.eacl.xml"
+    },
+    {
+      "id": "2026.eacl-srw.57",
+      "bibkey": "shankar-2026-energy",
+      "title": "Energy Matching based Preference Learning for Diffusion Language Models",
+      "authors": [
+        "Shiv Shankar"
+      ],
+      "year": "2026",
+      "venue": "eacl",
+      "booktitle": "Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (Volume 4: Student Research Workshop)",
+      "doi": "10.18653/v1/2026.eacl-srw.57",
+      "url": "https://aclanthology.org/2026.eacl-srw.57/",
+      "abstract": "Policy-gradient reinforcement learning (RL) is widely used to improve language model reasoning, but existing methods are not compatible with diffusion language models. The primary reason for this is the difficulty of likelihood estimation with such models. We propose EMBR, a scalable off-policy framework that reformulates KL-regularized RL as an energy-based distribution matching problem. By aligning policy updates with reward signals through energy matching,EMBR avoids the overhead of on-policy learning and the variance of importance weighting. We further derive a principled upper bound for the energy matching objective which can be used to fine-tune dLLMs. Experiments on multiple benchmarks in both online and offline setting show that EMBR matches or surpasses the performance of diffu-GRPO and related baselines in the online case, and of DPO in the offline case. Our approach provides a practical alternative for post-training of diffusion LMs.",
+      "source_xml": "data/xml/2026.eacl.xml"
+    },
+    {
+      "id": "2026.fever-1.4",
+      "bibkey": "gautam-etal-2026-energy",
+      "title": "The Energy of Falsehood: Detecting Hallucinations via Diffusion Model Likelihoods",
+      "authors": [
+        "Arpit Singh Gautam",
+        "Kailash Talreja",
+        "Saurabh Jha"
+      ],
+      "year": "2026",
+      "venue": "fever",
+      "booktitle": "Proceedings of the Ninth Fact Extraction and VERification Workshop (FEVER)",
+      "doi": "10.18653/v1/2026.fever-1.4",
+      "url": "https://aclanthology.org/2026.fever-1.4/",
+      "abstract": "Large Language Models (LLMs) frequently \"hallucinate\" plausible but incorrect assertions, a vulnerability often missed by uncertainty metrics when models are \"confidently wrong.\" We propose DiffuTruth, an unsupervised framework that re-conceptualizes fact verification via non-equilibrium thermodynamics, positing that factual truths act as stable attractors on a generative manifold while hallucinations are unstable. We introduce the \"Generative Stress Test\": claims are corrupted with noise and reconstructed using a discrete text diffusion model. We define Semantic Energy, a metric measuring the semantic divergence between the original claim and its reconstruction using an NLI critic. Unlike vector-space errors, Semantic Energy isolates deep factual contradictions. We further propose a Hybrid Calibration fusing this stability signal with discriminative confidence. Extensive experiments on FEVER demonstrate DiffuTruth achieves a state-of-the-art unsupervised AUROC of 0.725, outperforming baselines by +1.5% through the correction of overconfident predictions. Furthermore, we show superior zero-shot generalization on the multi-hop HOVER dataset, outperforming baselines by over 4%, confirming the robustness of thermodynamic truth properties to distribution shifts.",
+      "source_xml": "data/xml/2026.fever.xml"
+    },
+    {
+      "id": "2026.findings-eacl.180",
+      "bibkey": "huang-etal-2026-diffusion",
+      "title": "Diffusion Language Model Inference with Monte Carlo Tree Search",
+      "authors": [
+        "Zheng Huang",
+        "Kiran Ramnath",
+        "Yueyan Chen",
+        "Aosong Feng",
+        "Sangmin Woo",
+        "Balasubramaniam Srinivasan",
+        "Zhichao Xu",
+        "Kang Zhou",
+        "Shuai Wang",
+        "Haibo Ding",
+        "Lin Lee Cheong"
+      ],
+      "year": "2026",
+      "venue": "findings",
+      "booktitle": "Findings of the Association for Computational Linguistics: EACL 2026",
+      "doi": "10.18653/v1/2026.findings-eacl.180",
+      "url": "https://aclanthology.org/2026.findings-eacl.180/",
+      "abstract": "Diffusion language models (DLMs) have recently emerged as a compelling alternative to autoregressive generation, offering parallel generation and improved global coherence. During inference, DLMs generate text by iteratively denoising masked sequences in parallel; however, determining which positions to unmask and which tokens to commit forms a large combinatorial search problem. Existing inference methods approximate this search using heuristics, which often yield suboptimal decoding paths; other approaches instead rely on additional training to guide token selection. To introduce a principled search mechanism for DLMs inference, we introduce MEDAL, an inference-time scaling framework that integrates Monte Carlo Tree SEarch initialization for Diffusion LAnguage Model inference. We employ Monte Carlo Tree Search at the initialization stage to explore promising unmasking trajectories, providing a robust starting point for subsequent refinement. This design enables efficient inference-time scaling, allowing generation quality to improve as the search budget increases, without additional training. Across multiple benchmarks, MEDAL achieves up to 22.0% improvement over existing inference strategies, establishing a new paradigm for search-based inference in DLMs.",
+      "source_xml": "data/xml/2026.findings.xml"
+    },
+    {
+      "id": "2026.findings-eacl.260",
+      "bibkey": "israel-etal-2026-enabling",
+      "title": "Enabling Autoregressive Models to Fill In Masked Tokens",
+      "authors": [
+        "Daniel Mingyi Israel",
+        "Aditya Grover",
+        "Guy Van den Broeck"
+      ],
+      "year": "2026",
+      "venue": "findings",
+      "booktitle": "Findings of the Association for Computational Linguistics: EACL 2026",
+      "doi": "10.18653/v1/2026.findings-eacl.260",
+      "url": "https://aclanthology.org/2026.findings-eacl.260/",
+      "abstract": "Historically, LLMs have been trained using either autoregressive (AR) or masked language modeling (MLM) objectives, with AR models gaining dominance in recent years. However, AR models are inherently incapable of masked infilling, which is the ability to predict masked tokens between past and future context. In contrast, MLM models suffer from intrinsic computational inefficiencies during both training and inference that hinder their scalability. This work introduces MARIA (Masked and Autoregressive Infilling Architecture), a novel approach that leverages the strengths of both paradigms to achieve state-of-the-art masked infilling performance. MARIA combines a pre-trained MLM and AR model by training a linear decoder that takes their concatenated hidden states as input. This minimal modification enables the AR model to perform infilling while retaining its inherent advantages in terms of faster inference with KV caching. Our results demonstrate that MARIA significantly outperforms existing methods, namely discrete diffusion models, on masked infilling tasks.",
+      "source_xml": "data/xml/2026.findings.xml"
+    },
+    {
+      "id": "2026.propor-1.97",
+      "bibkey": "junior-etal-2026-accelerating",
+      "title": "Accelerating Portuguese Masked Diffusion Models through Representation Alignment",
+      "authors": [
+        "Adalberto Ferreira Barbosa Junior",
+        "Lucas Lima Neves",
+        "Adriano C\u00e9sar Santana"
+      ],
+      "year": "2026",
+      "venue": "propor",
+      "booktitle": "Proceedings of the 17th International Conference on Computational Processing of Portuguese (PROPOR 2026) - Vol. 1",
+      "doi": "",
+      "url": "https://aclanthology.org/2026.propor-1.97/",
+      "abstract": "Masked Diffusion Language Models (MDLM) have recently demonstrated that discrete diffusion can achieve competitive performance in text generation. However, training these models remains computationally expensive, particularly for lower-resourced languages like Portuguese. In this work, we adapt REPresentation Alignment (REPA), a technique originally proposed for vision, to the textual domain. We systematically evaluate the impact of aligning the internal representations of a Portuguese MDLM with those of pretrained teacher encoders (e.g., Qwen, BERTimbau). Our experiments show that REPA significantly accelerates training and improves final perplexity by 28.6% compared to a baseline without alignment. We also identify optimal hyperparameters, finding that mid-level alignment with modern teacher encoders yields the best results.",
+      "source_xml": "data/xml/2026.propor.xml"
+    }
+  ]
+}

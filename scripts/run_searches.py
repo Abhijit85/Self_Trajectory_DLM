@@ -32,6 +32,24 @@ PHRASES = [
     "trajectory self-feedback",
 ]
 TERMS = "(" + " OR ".join(f'"{phrase}"' for phrase in PHRASES) + ")"
+OPENREVIEW_BASEURL = "https://api2.openreview.net"
+ACL_GIT_TREE_URL = "https://api.github.com/repos/acl-org/acl-anthology/git/trees/master?recursive=1"
+ACL_RAW_BASE = "https://raw.githubusercontent.com/acl-org/acl-anthology/master/"
+IEEE_API_URL = "https://ieeexploreapi.ieee.org/api/v1/search/articles"
+
+
+def load_env(path=ROOT / ".env"):
+    if not path.exists():
+        return
+    for raw in path.read_text().splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip('"').strip("'")
+        if key and value and key not in os.environ:
+            os.environ[key] = value
 
 
 def fetch(url: str, accept: str = "*/*", attempts: int = 1, backoff: int = 5, headers=None) -> bytes:
@@ -44,6 +62,33 @@ def fetch(url: str, accept: str = "*/*", attempts: int = 1, backoff: int = 5, he
         try:
             with urllib.request.urlopen(req, timeout=60) as resp:
                 return resp.read()
+        except urllib.error.HTTPError as exc:
+            last_exc = exc
+            if exc.code not in {429, 500, 502, 503, 504} or attempt == attempts:
+                raise
+        except (TimeoutError, urllib.error.URLError) as exc:
+            last_exc = exc
+            if attempt == attempts:
+                raise
+        time.sleep(backoff * attempt)
+    raise RuntimeError(last_exc)
+
+
+def fetch_json(url: str, attempts: int = 1, backoff: int = 5, headers=None):
+    return json.loads(fetch(url, "application/json", attempts=attempts, backoff=backoff, headers=headers))
+
+
+def post_json(url: str, payload, attempts: int = 1, backoff: int = 5, headers=None):
+    request_headers = {"User-Agent": "SLR-repro-kit/0.1", "Accept": "application/json", "Content-Type": "application/json"}
+    if headers:
+        request_headers.update(headers)
+    data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(url, data=data, headers=request_headers, method="POST")
+    last_exc = None
+    for attempt in range(1, attempts + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                return json.loads(resp.read())
         except urllib.error.HTTPError as exc:
             last_exc = exc
             if exc.code not in {429, 500, 502, 503, 504} or attempt == attempts:
@@ -121,7 +166,7 @@ def run_semantic_scholar():
             )
             if key:
                 merged[key] = paper
-        time.sleep(3)
+        time.sleep(5)
     merged_payload = {
         "queries": [semantic_scholar_phrase_params(phrase) for phrase in PHRASES],
         "phrase_summaries": phrase_summaries,
@@ -135,29 +180,303 @@ def run_semantic_scholar():
     return query, str(len(merged)), "search/exports/semanticscholar_merged.json", notes
 
 
+def openreview_login_headers():
+    username = os.environ.get("OPENREVIEW_USERNAME")
+    password = os.environ.get("OPENREVIEW_PASSWORD")
+    if not username or not password:
+        return {}
+    payload = {"id": username, "password": password}
+    response = post_json(f"{OPENREVIEW_BASEURL}/login", payload, attempts=2, backoff=3)
+    token = response.get("token")
+    if not token:
+        return {}
+    return {"Authorization": f"Bearer {token}"}
+
+
+def content_value(content, key, default=""):
+    value = (content or {}).get(key, default)
+    if isinstance(value, dict):
+        return value.get("value", default)
+    return value
+
+
+def xml_text(elem):
+    if elem is None:
+        return ""
+    return "".join(elem.itertext()).strip()
+
+
+def bibtex_escape(value):
+    return (value or "").replace("\\", "\\\\").replace("{", "\\{").replace("}", "\\}")
+
+
+def run_acl_anthology():
+    tree = fetch_json(ACL_GIT_TREE_URL, attempts=3, backoff=5)
+    xml_paths = sorted(
+        item["path"] for item in tree.get("tree", [])
+        if item.get("type") == "blob"
+        and item.get("path", "").startswith("data/xml/")
+        and item.get("path", "").endswith(".xml")
+        and item["path"].split("/")[-1][:4].isdigit()
+        and 2021 <= int(item["path"].split("/")[-1][:4]) <= 2026
+    )
+    matches = {}
+    downloaded = []
+    terms_lower = [phrase.lower() for phrase in PHRASES]
+    for path in xml_paths:
+        url = ACL_RAW_BASE + path
+        try:
+            raw = fetch(url, "application/xml", attempts=2, backoff=2)
+        except Exception:
+            continue
+        downloaded.append(path)
+        root = ET.fromstring(raw)
+        collection_id = root.attrib.get("id", "")
+        for volume in root.findall("volume"):
+            meta = volume.find("meta")
+            year = xml_text(meta.find("year")) if meta is not None else collection_id[:4]
+            if year and year.isdigit() and not (2021 <= int(year) <= 2026):
+                continue
+            booktitle = xml_text(meta.find("booktitle")) if meta is not None else ""
+            venue = xml_text(meta.find("venue")) if meta is not None else ""
+            volume_id = volume.attrib.get("id", "")
+            for paper in volume.findall("paper"):
+                title = xml_text(paper.find("title"))
+                abstract = xml_text(paper.find("abstract"))
+                haystack = f"{title} {abstract}".lower()
+                if not any(term in haystack for term in terms_lower):
+                    continue
+                url_id = xml_text(paper.find("url"))
+                bibkey = xml_text(paper.find("bibkey")) or url_id or f"{collection_id}-{volume_id}-{paper.attrib.get('id', '')}"
+                authors = []
+                for author in paper.findall("author"):
+                    name = " ".join(part for part in [xml_text(author.find("first")), xml_text(author.find("last"))] if part)
+                    if name:
+                        authors.append(name)
+                matches[bibkey] = {
+                    "id": url_id,
+                    "bibkey": bibkey,
+                    "title": title,
+                    "authors": authors,
+                    "year": year,
+                    "venue": venue,
+                    "booktitle": booktitle,
+                    "doi": xml_text(paper.find("doi")),
+                    "url": f"https://aclanthology.org/{url_id}/" if url_id else "",
+                    "abstract": abstract,
+                    "source_xml": path,
+                }
+        time.sleep(0.2)
+
+    records = list(matches.values())
+    json_path = EXPORTS / "acl.json"
+    json_path.write_text(json.dumps({
+        "queries": PHRASES,
+        "xml_files_considered": len(xml_paths),
+        "xml_files_downloaded": len(downloaded),
+        "deduped_total": len(records),
+        "records": records,
+    }, indent=2), encoding="utf-8")
+
+    csv_path = EXPORTS / "acl.csv"
+    with csv_path.open("w", newline="") as fh:
+        fieldnames = ["id", "bibkey", "title", "authors", "year", "venue", "booktitle", "doi", "url", "abstract", "source_xml"]
+        writer = csv.DictWriter(fh, fieldnames=fieldnames)
+        writer.writeheader()
+        for record in records:
+            row = dict(record)
+            row["authors"] = "; ".join(record["authors"])
+            writer.writerow(row)
+
+    bib_path = EXPORTS / "acl.bib"
+    with bib_path.open("w") as fh:
+        for record in records:
+            fh.write(f"@inproceedings{{{record['bibkey']},\n")
+            fh.write(f"  title = {{{bibtex_escape(record['title'])}}},\n")
+            if record["authors"]:
+                fh.write(f"  author = {{{bibtex_escape(' and '.join(record['authors']))}}},\n")
+            fh.write(f"  year = {{{bibtex_escape(record['year'])}}},\n")
+            if record["booktitle"]:
+                fh.write(f"  booktitle = {{{bibtex_escape(record['booktitle'])}}},\n")
+            if record["doi"]:
+                fh.write(f"  doi = {{{bibtex_escape(record['doi'])}}},\n")
+            if record["url"]:
+                fh.write(f"  url = {{{bibtex_escape(record['url'])}}},\n")
+            fh.write("}\n\n")
+
+    query = f"ACL Anthology official XML metadata, 2021-2026, title/abstract contains any of {TERMS}"
+    notes = f"{ACL_GIT_TREE_URL}; xml_files_considered={len(xml_paths)}; xml_files_downloaded={len(downloaded)}"
+    return query, str(len(records)), "search/exports/acl.bib", notes
+
+
+def run_ieee_xplore():
+    api_key = os.environ.get("IEEE_XPLORE_API_KEY")
+    if not api_key:
+        raise RuntimeError("IEEE_XPLORE_API_KEY is not set")
+
+    merged = {}
+    phrase_summaries = []
+    urls = []
+    for phrase in PHRASES:
+        params = {
+            "apikey": api_key,
+            "querytext": f'"{phrase}"',
+            "start_year": "2021",
+            "end_year": "2026",
+            "max_records": "200",
+            "start_record": "1",
+            "sort_field": "article_title",
+            "sort_order": "asc",
+        }
+        url = IEEE_API_URL + "?" + urllib.parse.urlencode(params)
+        safe_params = dict(params)
+        safe_params["apikey"] = "REDACTED"
+        safe_url = IEEE_API_URL + "?" + urllib.parse.urlencode(safe_params)
+        urls.append(safe_url)
+        payload = fetch_json(url, attempts=3, backoff=5)
+        articles = payload.get("articles", [])
+        phrase_summaries.append({
+            "phrase": phrase,
+            "total": payload.get("total_records", payload.get("total_searched", "")),
+            "returned": len(articles),
+        })
+        for article in articles:
+            key = (
+                str(article.get("article_number") or "")
+                or article.get("doi")
+                or (article.get("title") or "").strip().lower()
+            )
+            if key:
+                merged[key] = article
+        time.sleep(1.5)
+
+    records = list(merged.values())
+    json_path = EXPORTS / "ieee.json"
+    json_path.write_text(json.dumps({
+        "queries": [{**{k: v for k, v in {
+            "querytext": f'"{phrase}"',
+            "start_year": "2021",
+            "end_year": "2026",
+            "max_records": "200",
+        }.items()}} for phrase in PHRASES],
+        "phrase_summaries": phrase_summaries,
+        "deduped_total": len(records),
+        "articles": records,
+    }, indent=2), encoding="utf-8")
+
+    csv_path = EXPORTS / "ieee.csv"
+    with csv_path.open("w", newline="") as fh:
+        fieldnames = [
+            "article_number", "title", "authors", "publication_year",
+            "publication_title", "doi", "html_url", "abstract",
+        ]
+        writer = csv.DictWriter(fh, fieldnames=fieldnames)
+        writer.writeheader()
+        for article in records:
+            authors = article.get("authors", {}).get("authors", []) if isinstance(article.get("authors"), dict) else []
+            author_names = "; ".join(a.get("full_name", "") for a in authors if a.get("full_name"))
+            writer.writerow({
+                "article_number": article.get("article_number", ""),
+                "title": article.get("title", ""),
+                "authors": author_names,
+                "publication_year": article.get("publication_year", ""),
+                "publication_title": article.get("publication_title", ""),
+                "doi": article.get("doi", ""),
+                "html_url": article.get("html_url", ""),
+                "abstract": article.get("abstract", ""),
+            })
+
+    query = f"IEEE Xplore Metadata API per phrase over {TERMS}; querytext, start_year=2021, end_year=2026"
+    notes = "URLs with API key redacted: " + " | ".join(urls) + "; phrase_summaries=" + json.dumps(phrase_summaries, sort_keys=True)
+    return query, str(len(records)), "search/exports/ieee.csv", notes
+
+
+def note_year(note):
+    content = note.get("content") or {}
+    year = content_value(content, "year", "")
+    if year:
+        return str(year)
+    cdate = note.get("cdate") or note.get("tcdate")
+    if cdate:
+        return str(time.gmtime(int(cdate) / 1000).tm_year)
+    return ""
+
+
+def note_matches_openreview_scope(note):
+    year = note_year(note)
+    if year and year.isdigit() and not (2021 <= int(year) <= 2026):
+        return False
+    haystack = " ".join(
+        str(x)
+        for x in [
+            note.get("invitation", ""),
+            " ".join(note.get("invitations", []) or []),
+            content_value(note.get("content") or {}, "venue", ""),
+            content_value(note.get("content") or {}, "venueid", ""),
+        ]
+    ).lower()
+    venues = ["iclr", "neurips", "nips", "icml", "acl", "emnlp", "naacl", "eacl", "aacl", "coling", "conll"]
+    return not haystack or any(v in haystack for v in venues)
+
+
+def run_openreview():
+    headers = openreview_login_headers()
+    merged = {}
+    phrase_summaries = []
+    urls = []
+    for phrase in PHRASES:
+        params = {
+            "term": phrase,
+            "type": "exact",
+            "content": "all",
+            "limit": 1000,
+        }
+        url = f"{OPENREVIEW_BASEURL}/notes/search?" + urllib.parse.urlencode(params)
+        urls.append(url)
+        payload = fetch_json(url, attempts=3, backoff=5, headers=headers)
+        notes = [n for n in payload.get("notes", []) if note_matches_openreview_scope(n)]
+        phrase_summaries.append({"phrase": phrase, "returned": len(payload.get("notes", [])), "in_scope": len(notes)})
+        for note in notes:
+            key = note.get("id") or (content_value(note.get("content") or {}, "title", "").strip().lower())
+            if key:
+                merged[key] = note
+        time.sleep(1.5)
+
+    path = EXPORTS / "openreview.json"
+    path.write_text(json.dumps({
+        "queries": PHRASES,
+        "phrase_summaries": phrase_summaries,
+        "deduped_total": len(merged),
+        "notes": list(merged.values()),
+    }, indent=2), encoding="utf-8")
+
+    csv_path = EXPORTS / "openreview.csv"
+    with csv_path.open("w", newline="") as fh:
+        fieldnames = ["id", "title", "authors", "year", "venue", "url", "abstract"]
+        writer = csv.DictWriter(fh, fieldnames=fieldnames)
+        writer.writeheader()
+        for note in merged.values():
+            content = note.get("content") or {}
+            authors = content_value(content, "authors", [])
+            if isinstance(authors, list):
+                authors = "; ".join(str(a) for a in authors)
+            writer.writerow({
+                "id": note.get("id", ""),
+                "title": content_value(content, "title", ""),
+                "authors": authors,
+                "year": note_year(note),
+                "venue": content_value(content, "venue", "") or content_value(content, "venueid", ""),
+                "url": f"https://openreview.net/forum?id={note.get('forum') or note.get('id', '')}",
+                "abstract": content_value(content, "abstract", ""),
+            })
+
+    query = f"OpenReview /notes/search per phrase over {TERMS}; scoped to ICLR/NeurIPS/ICML/*ACL-like venues, 2021-2026"
+    notes = "URLs: " + " | ".join(urls) + "; phrase_summaries=" + json.dumps(phrase_summaries, sort_keys=True)
+    return query, str(len(merged)), "search/exports/openreview.csv", notes
+
+
 def manual_rows():
     return [
-        (
-            "OpenReview",
-            f'venues ICLR/NeurIPS/ICML/*ACL 2021-2026; full-text/metadata search for {TERMS}',
-            "",
-            "search/exports/openreview.csv",
-            "Manual/API export required; do not enter a count until the export is saved.",
-        ),
-        (
-            "ACL Anthology",
-            f'full-text search for {TERMS}',
-            "",
-            "search/exports/acl.bib",
-            "Manual export required from ACL Anthology search.",
-        ),
-        (
-            "IEEE Xplore",
-            f'metadata+abstract search for {TERMS}',
-            "",
-            "search/exports/ieee.csv",
-            "Subscription/manual export required.",
-        ),
         (
             "ACM Digital Library",
             f'metadata+abstract search for {TERMS}',
@@ -169,6 +488,7 @@ def manual_rows():
 
 
 def main():
+    load_env()
     EXPORTS.mkdir(parents=True, exist_ok=True)
     today = date.today().isoformat()
     rows = []
@@ -178,6 +498,21 @@ def main():
             "Semantic Scholar",
             lambda: " ; ".join(json.dumps(semantic_scholar_phrase_params(phrase), sort_keys=True) for phrase in PHRASES),
             run_semantic_scholar,
+        ),
+        (
+            "OpenReview",
+            lambda: f"OpenReview /notes/search per phrase over {TERMS}; scoped to ICLR/NeurIPS/ICML/*ACL-like venues, 2021-2026",
+            run_openreview,
+        ),
+        (
+            "ACL Anthology",
+            lambda: f"ACL Anthology official XML metadata, 2021-2026, title/abstract contains any of {TERMS}",
+            run_acl_anthology,
+        ),
+        (
+            "IEEE Xplore",
+            lambda: f"IEEE Xplore Metadata API per phrase over {TERMS}; querytext, start_year=2021, end_year=2026",
+            run_ieee_xplore,
         ),
     ]
     for library, query_factory, runner in public_runs:
