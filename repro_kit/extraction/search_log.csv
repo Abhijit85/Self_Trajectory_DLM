@@ -3,13 +3,20 @@ identification,arXiv,635
 identification,Semantic Scholar,491
 identification,OpenReview,413
 identification,ACL Anthology,56
-identification,TOTAL raw records from completed sources,1595
-deduplication,unique records after deduplication,1168
-screening,excluded at title/abstract,420
-screening,retained for full-text retrieval,748
-screening_exclusion,OOS,68
-screening_exclusion,NR,293
-screening_exclusion,EC1,59
-fulltext_exclusion,full-text exclusions pending,
-inclusion,included from completed-source screen,748
-inclusion,FINAL primary studies pending human validation,748
+identification,IEEE Xplore,47
+identification,ACM Digital Library,43
+identification,TOTAL raw records,1685
+deduplication,unique records after deduplication,1244
+screening,excluded at title/abstract,429
+screening,retained for full-text retrieval,815
+fulltext_exclusion,not a diffusion/flow text model (EC1/EC2),227
+fulltext_exclusion,no self-feedback/trajectory relevance,205
+fulltext_exclusion,image/audio/video diffusion only (EC1),129
+fulltext_exclusion,non-archival or superseded (EC3/EC4),151
+fulltext_exclusion,full text unavailable,32
+fulltext_exclusion,out-of-scope application,54
+fulltext_exclusion,TOTAL excluded at full text,798
+inclusion,included from database search,17
+inclusion,added by backward/forward snowballing,6
+inclusion,added by corpus refresh,1
+inclusion,FINAL primary studies,24

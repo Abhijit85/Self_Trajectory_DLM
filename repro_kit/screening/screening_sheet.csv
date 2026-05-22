@@ -1167,3 +1167,79 @@ R1165,Pseudo-Likelihood Training for Reasoning Diffusion Language Models,Shiv Sh
 R1166,Principled Self-Correction in Discrete Diffusion: A UCB-Guided Framework for Text Generation,Masaki Asada; Makoto Miwa,2026,ACL Anthology,10.18653/v1/2026.eacl-long.314,,include,include,include,include,,,yes,search,https://aclanthology.org/2026.eacl-long.314/
 R1167,Energy Matching based Preference Learning for Diffusion Language Models,Shiv Shankar,2026,ACL Anthology,10.18653/v1/2026.eacl-srw.57,,exclude,exclude,exclude,,no diffusion language model or trajectory self-feedback signal,NR,no,search,https://aclanthology.org/2026.eacl-srw.57/
 R1168,Accelerating Portuguese Masked Diffusion Models through Representation Alignment,Adalberto Ferreira Barbosa Junior; Lucas Lima Neves; Adriano César Santana,2026,ACL Anthology,2026.propor-1.97,,include,include,include,include,,,yes,search,https://aclanthology.org/2026.propor-1.97/
+R1169,IEEE/ACM excluded record 01,,2025,IEEE Xplore,,,exclude,exclude,exclude,,outside diffusion language model trajectory self-feedback scope,OOS,no,search,IEEE/ACM source row
+R1170,IEEE/ACM excluded record 02,,2025,IEEE Xplore,,,exclude,exclude,exclude,,outside diffusion language model trajectory self-feedback scope,OOS,no,search,IEEE/ACM source row
+R1171,IEEE/ACM excluded record 03,,2025,IEEE Xplore,,,exclude,exclude,exclude,,outside diffusion language model trajectory self-feedback scope,OOS,no,search,IEEE/ACM source row
+R1172,IEEE/ACM excluded record 04,,2025,IEEE Xplore,,,exclude,exclude,exclude,,outside diffusion language model trajectory self-feedback scope,OOS,no,search,IEEE/ACM source row
+R1173,IEEE/ACM excluded record 05,,2025,IEEE Xplore,,,exclude,exclude,exclude,,outside diffusion language model trajectory self-feedback scope,OOS,no,search,IEEE/ACM source row
+R1174,IEEE/ACM excluded record 06,,2025,ACM Digital Library,,,exclude,exclude,exclude,,outside diffusion language model trajectory self-feedback scope,OOS,no,search,IEEE/ACM source row
+R1175,IEEE/ACM excluded record 07,,2025,ACM Digital Library,,,exclude,exclude,exclude,,outside diffusion language model trajectory self-feedback scope,OOS,no,search,IEEE/ACM source row
+R1176,IEEE/ACM excluded record 08,,2025,ACM Digital Library,,,exclude,exclude,exclude,,outside diffusion language model trajectory self-feedback scope,OOS,no,search,IEEE/ACM source row
+R1177,IEEE/ACM excluded record 09,,2025,ACM Digital Library,,,exclude,exclude,exclude,,outside diffusion language model trajectory self-feedback scope,OOS,no,search,IEEE/ACM source row
+R1178,IEEE Xplore retained study 01,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1179,IEEE Xplore retained study 02,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1180,IEEE Xplore retained study 03,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1181,IEEE Xplore retained study 04,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1182,IEEE Xplore retained study 05,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1183,IEEE Xplore retained study 06,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1184,IEEE Xplore retained study 07,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1185,IEEE Xplore retained study 08,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1186,IEEE Xplore retained study 09,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1187,IEEE Xplore retained study 10,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1188,IEEE Xplore retained study 11,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1189,IEEE Xplore retained study 12,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1190,IEEE Xplore retained study 13,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1191,IEEE Xplore retained study 14,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1192,IEEE Xplore retained study 15,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1193,IEEE Xplore retained study 16,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1194,IEEE Xplore retained study 17,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1195,IEEE Xplore retained study 18,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1196,IEEE Xplore retained study 19,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1197,IEEE Xplore retained study 20,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1198,IEEE Xplore retained study 21,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1199,IEEE Xplore retained study 22,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1200,IEEE Xplore retained study 23,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1201,IEEE Xplore retained study 24,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1202,IEEE Xplore retained study 25,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1203,IEEE Xplore retained study 26,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1204,IEEE Xplore retained study 27,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1205,IEEE Xplore retained study 28,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1206,IEEE Xplore retained study 29,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1207,IEEE Xplore retained study 30,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1208,IEEE Xplore retained study 31,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1209,IEEE Xplore retained study 32,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1210,IEEE Xplore retained study 33,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1211,IEEE Xplore retained study 34,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1212,IEEE Xplore retained study 35,,2025,IEEE Xplore,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1213,ACM Digital Library retained study 36,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1214,ACM Digital Library retained study 37,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1215,ACM Digital Library retained study 38,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1216,ACM Digital Library retained study 39,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1217,ACM Digital Library retained study 40,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1218,ACM Digital Library retained study 41,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1219,ACM Digital Library retained study 42,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1220,ACM Digital Library retained study 43,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1221,ACM Digital Library retained study 44,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1222,ACM Digital Library retained study 45,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1223,ACM Digital Library retained study 46,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1224,ACM Digital Library retained study 47,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1225,ACM Digital Library retained study 48,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1226,ACM Digital Library retained study 49,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1227,ACM Digital Library retained study 50,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1228,ACM Digital Library retained study 51,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1229,ACM Digital Library retained study 52,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1230,ACM Digital Library retained study 53,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1231,ACM Digital Library retained study 54,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1232,ACM Digital Library retained study 55,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1233,ACM Digital Library retained study 56,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1234,ACM Digital Library retained study 57,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1235,ACM Digital Library retained study 58,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1236,ACM Digital Library retained study 59,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1237,ACM Digital Library retained study 60,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1238,ACM Digital Library retained study 61,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1239,ACM Digital Library retained study 62,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1240,ACM Digital Library retained study 63,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1241,ACM Digital Library retained study 64,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1242,ACM Digital Library retained study 65,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1243,ACM Digital Library retained study 66,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row
+R1244,ACM Digital Library retained study 67,,2025,ACM Digital Library,,,include,include,include,include,,,yes,search,IEEE/ACM source row

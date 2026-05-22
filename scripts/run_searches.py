@@ -318,9 +318,12 @@ def run_ieee_xplore():
     phrase_summaries = []
     urls = []
     for phrase in PHRASES:
+        # Match the official Python SDK's XPLORE.queryText(),
+        # resultsFilter(), maximumResults(), and dataType('json') URL shape.
         params = {
             "apikey": api_key,
-            "querytext": f'"{phrase}"',
+            "format": "json",
+            "querytext": phrase,
             "start_year": "2021",
             "end_year": "2026",
             "max_records": "200",
@@ -386,7 +389,7 @@ def run_ieee_xplore():
                 "abstract": article.get("abstract", ""),
             })
 
-    query = f"IEEE Xplore Metadata API per phrase over {TERMS}; querytext, start_year=2021, end_year=2026"
+    query = f"IEEE Xplore Python SDK-style queryText per phrase over {TERMS}; start_year=2021, end_year=2026"
     notes = "URLs with API key redacted: " + " | ".join(urls) + "; phrase_summaries=" + json.dumps(phrase_summaries, sort_keys=True)
     return query, str(len(records)), "search/exports/ieee.csv", notes
 
