@@ -28,9 +28,11 @@ mechanism changes.
 Searches are recorded for arXiv, Semantic Scholar, OpenReview, ACL Anthology,
 IEEE Xplore, and ACM Digital Library. Exact query strings, run dates, raw hit
 counts, and export paths are recorded in `search/query_log.csv`. IEEE Xplore
-returned HTTP 403 and contributed no imported records. ACM Digital Library has
-a manual hit count of 45, but no ACM export is included in this repository and
-no ACM records are imported into the deduplicated screening set.
+and ACM Digital Library were searched manually because public API or export
+access was restricted/unavailable. IEEE contributed no imported records. ACM
+Digital Library has a manual hit count of 45, but no ACM export is included in
+this repository and no ACM records are imported into the deduplicated screening
+set.
 
 ## Eligibility Criteria
 

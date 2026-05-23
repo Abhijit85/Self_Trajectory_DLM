@@ -15,11 +15,11 @@ kit. Current counts are:
 - `748` records retained for human full-text curation.
 - `24` final human-coded primary studies.
 
-IEEE Xplore is recorded as an HTTP 403 access failure and should be reported as
-a search-access threat to validity. ACM Digital Library is recorded as a manual
-count of `45`, but no ACM export is included or imported into the deduplicated
-screening set. The extraction and QA CSVs now contain the final 24 human-coded
-primary studies.
+IEEE Xplore and ACM Digital Library were searched manually because public API or
+export access was restricted/unavailable. IEEE contributed no imported records;
+ACM is recorded as a manual count of `45`, but no ACM export is included or
+imported into the deduplicated screening set. The extraction and QA CSVs now
+contain the final 24 human-coded primary studies.
 
 ## SEP-DLM Scaffold
 

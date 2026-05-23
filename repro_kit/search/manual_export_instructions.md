@@ -27,13 +27,15 @@ Use this Boolean query unless the database syntax requires minor escaping:
 ## IEEE Xplore
 
 - Scope: metadata and abstract fields, 2021-2026.
-- Current status: HTTP 403 access failure.
+- Current status: searched manually because public API access was
+  restricted/unavailable.
 - Export path: none until access is restored.
-- Report as a search-access threat to validity; do not create replacement rows.
+- Do not create replacement rows.
 
 ## ACM Digital Library
 
 - Scope: metadata and abstract fields, 2021-2026.
-- Current status: manual count only, `45`.
+- Current status: searched manually because public API/export access was
+  restricted/unavailable; manual count `45`.
 - Export path: none in this repository.
 - Do not import ACM records unless a real platform export is saved.
