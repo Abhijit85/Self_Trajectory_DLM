@@ -6,11 +6,15 @@ Usage:
   # QA agreement (ordinal 0/0.5/1) from two QA score files with matching study order:
   python compute_kappa.py --mode qa qa_rater1.csv qa_rater2.csv
 
+  # Operator-family agreement (nominal labels) from two reviewer files:
+  python compute_kappa.py --mode operator reviewer_a_mechanism_reviews.csv reviewer_b_evidence_reviews.csv
+
 Reports quadratic-weighted Cohen's kappa and raw percent agreement for the
-24-study human-coded quality assessment. The title/abstract stage is an
-automated pre-screen, so this repository does not compute or report a human
-agreement statistic for that stage. Falls back to a pure-python implementation
-if scikit-learn is not installed.
+24-study human-coded quality assessment, and unweighted Cohen's kappa for
+operator-family labels. The title/abstract stage is an automated pre-screen,
+so this repository does not compute or report a human agreement statistic for
+that stage. Falls back to a pure-python implementation if scikit-learn is not
+installed.
 """
 import argparse, csv, sys
 
@@ -41,13 +45,31 @@ def read_col(path, col):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--mode', choices=['qa'], required=True)
+    ap.add_argument('--mode', choices=['qa', 'operator'], required=True)
     ap.add_argument('files', nargs='+')
     args = ap.parse_args()
 
     if len(args.files) != 2:
-        sys.exit("QA mode requires two files: qa_rater1.csv qa_rater2.csv")
+        sys.exit(f"{args.mode} mode requires two input files.")
     f1, f2 = args.files[0], args.files[1]
+    if args.mode == 'operator':
+        def load_operator(path):
+            with open(path, newline='') as fh:
+                return [r for r in csv.DictReader(fh)
+                        if r.get('study', '') and not r['study'].startswith('#')]
+        r1, r2 = load_operator(f1), load_operator(f2)
+        if not r1 or not r2:
+            sys.exit("No operator-family rows found in one or both reviewer files.")
+        if [r['study'] for r in r1] != [r['study'] for r in r2]:
+            sys.exit("Reviewer files must contain matching study order.")
+        a = [r['operator_family'].strip() for r in r1]
+        b = [r['operator_family'].strip() for r in r2]
+        kappa, raw = cohen_kappa(a, b, weights=None)
+        print(f"Operator-family agreement over n={len(a)} studies (unweighted):")
+        print(f"  Cohen's kappa  = {kappa:.3f}")
+        print(f"  raw agreement  = {raw*100:.0f}%")
+        return
+
     crits = [f"QA{i}" for i in range(1, 9)]
     # accept either 'QA1'..'QA8' headers or the long names; map by prefix
     def load(path):
