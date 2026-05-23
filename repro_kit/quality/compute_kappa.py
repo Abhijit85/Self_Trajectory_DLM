@@ -9,8 +9,8 @@ Usage:
 Reports quadratic-weighted Cohen's kappa and raw percent agreement for the
 24-study human-coded quality assessment. The title/abstract stage is an
 automated pre-screen, so this repository does not compute or report a human
-screening kappa. Falls back to a pure-python implementation if scikit-learn is
-not installed.
+agreement statistic for that stage. Falls back to a pure-python implementation
+if scikit-learn is not installed.
 """
 import argparse, csv, sys
 
