@@ -3,9 +3,9 @@
 This repository contains reproducibility materials for a systematic literature
 review of trajectory self-feedback in diffusion language models.
 
-## Review Status
+<!-- ## Review Status -->
 
-This repository is currently a reproducibility-kit scaffold. It is safe to use
+<!-- This repository is currently a reproducibility-kit scaffold. It is safe to use
 as the audit structure for the review, but the included CSVs should not be cited
 as final SLR evidence until the real search, screening, extraction, and
 independent quality-rating work has been completed.
@@ -22,9 +22,9 @@ Known fields still to complete:
 - `repro_kit/quality/qa_rater1.csv` and `repro_kit/quality/qa_rater2.csv`
   are empty until two real independent ratings are entered.
 - `repro_kit/extraction/extraction_matrix.csv` is empty until consensus
-  extraction is completed for genuinely included papers.
+  extraction is completed for genuinely included papers. -->
 
-## Repository Contents
+<!-- ## Repository Contents
 
 The main audit trail is in [`repro_kit/`](repro_kit/):
 
@@ -86,4 +86,4 @@ commands after the real independent coding and screening data are in place.
 
 Do not cite a named GitHub repository during double-blind review. Use an
 anonymous.4open.science mirror or an anonymized OSF view-only link for review,
-then move the finalized artifacts to a named repository for camera-ready release.
+then move the finalized artifacts to a named repository for camera-ready release. -->
