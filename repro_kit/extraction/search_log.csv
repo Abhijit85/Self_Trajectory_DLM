@@ -6,8 +6,8 @@ identification,ACL Anthology imported records,56
 identification,IEEE Xplore manual search due to public API restriction/unavailability (imported records),0
 identification,ACM Digital Library manual search due to public API restriction/unavailability (manual hits; not imported),45
 identification,TOTAL imported records used for deduplication,1595
-deduplication,unique imported records after deduplication and removal of fabricated IEEE/ACM template records,1168
-screening,excluded at title/abstract screening,420
-screening,retained for human full-text curation,748
-fulltext_exclusion,excluded at human full text,724
+deduplication,unique imported records after deduplication and removal of prior IEEE/ACM template records,1168
+screening,excluded at title/abstract screening,415
+screening,retained for human full-text curation,753
+fulltext_exclusion,excluded at human full text,729
 inclusion,FINAL human-coded primary studies,24

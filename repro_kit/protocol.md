@@ -47,9 +47,10 @@ or out-of-scope applications.
 
 ## Screening Procedure
 
-The `screening/screening_sheet.csv` records 1,168 unique imported records, 420
-title/abstract exclusions, 748 records retained for human full-text curation,
-and the final 24-study human-coded corpus.
+The `screening/screening_sheet.csv` records 1,168 unique imported records, 415
+automated title/abstract exclusions, 753 records retained for human full-text
+curation, 729 human full-text exclusions, and the final 24-study human-coded
+corpus.
 
 ## Quality Assessment
 

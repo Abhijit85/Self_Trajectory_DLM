@@ -3,17 +3,13 @@
 Compute inter-rater agreement for the SLR.
 
 Usage:
-  # Screening agreement (binary include/exclude) from screening_sheet.csv.
-  # Use only when ta_screener1/ta_screener2 are true independent human labels:
-  python compute_kappa.py --mode screening ../screening/screening_sheet.csv
-
   # QA agreement (ordinal 0/0.5/1) from two QA score files with matching study order:
   python compute_kappa.py --mode qa qa_rater1.csv qa_rater2.csv
 
-Reports Cohen's kappa (screening: unweighted; QA: quadratic-weighted, appropriate
-for ordinal scores) and raw percent agreement. The repository's current
-title/abstract stage is an automated pre-screen, so no human screening kappa is
-reported from it. Falls back to a pure-python implementation if scikit-learn is
+Reports quadratic-weighted Cohen's kappa and raw percent agreement for the
+24-study human-coded quality assessment. The title/abstract stage is an
+automated pre-screen, so this repository does not compute or report a human
+screening kappa. Falls back to a pure-python implementation if scikit-learn is
 not installed.
 """
 import argparse, csv, sys
@@ -45,54 +41,37 @@ def read_col(path, col):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--mode', choices=['screening', 'qa'], required=True)
+    ap.add_argument('--mode', choices=['qa'], required=True)
     ap.add_argument('files', nargs='+')
     args = ap.parse_args()
 
-    if args.mode == 'screening':
-        print("NOTE: Use screening mode only for true independent human labels.")
-        print("The current repository screening sheet is an automated pre-screen;")
-        print("do not report this output as human screening reliability unless")
-        print("ta_screener1 and ta_screener2 have been replaced by human coders.")
-        path = args.files[0]
-        with open(path, newline='') as f:
-            rows = [r for r in csv.DictReader(f)
-                    if r.get('record_id','') and not r['record_id'].startswith('#')
-                    and r.get('ta_screener1','').strip() and r.get('ta_screener2','').strip()]
-        a = [r['ta_screener1'].strip() for r in rows]
-        b = [r['ta_screener2'].strip() for r in rows]
-        if not a:
-            sys.exit("No rows with both ta_screener1 and ta_screener2 filled in.")
-        kappa, raw = cohen_kappa(a, b, weights=None)
-        print(f"Screening agreement over n={len(a)} records:")
-        print(f"  Cohen's kappa  = {kappa:.3f}")
-        print(f"  raw agreement  = {raw*100:.1f}%")
-    else:
-        f1, f2 = args.files[0], args.files[1]
-        crits = [f"QA{i}" for i in range(1, 9)]
-        # accept either 'QA1'..'QA8' headers or the long names; map by prefix
-        def load(path):
-            with open(path, newline='') as fh:
-                return [r for r in csv.DictReader(fh)
-                        if r.get('study', '') and not r['study'].startswith('#')]
-        r1, r2 = load(f1), load(f2)
-        if not r1 or not r2:
-            sys.exit("No QA rows found in one or both rater files.")
-        print(f"QA agreement over n={min(len(r1),len(r2))} studies (quadratic-weighted):")
-        ks = []
-        for c in crits:
-            col1 = next((h for h in r1[0] if h.startswith(c)), None)
-            col2 = next((h for h in r2[0] if h.startswith(c)), None)
-            if not col1 or not col2:
-                print(f"  {c}: column not found, skipping"); continue
-            a = [str(x[col1]).strip() for x in r1]
-            b = [str(x[col2]).strip() for x in r2]
-            kappa, raw = cohen_kappa(a, b, weights='quadratic')
-            ks.append(kappa)
-            print(f"  {c}: kappa_w = {kappa:.3f}  (raw {raw*100:.0f}%)")
-        if ks:
-            print(f"  ----  mean kappa_w = {sum(ks)/len(ks):.3f}, "
-                  f"range {min(ks):.3f}-{max(ks):.3f}")
+    if len(args.files) != 2:
+        sys.exit("QA mode requires two files: qa_rater1.csv qa_rater2.csv")
+    f1, f2 = args.files[0], args.files[1]
+    crits = [f"QA{i}" for i in range(1, 9)]
+    # accept either 'QA1'..'QA8' headers or the long names; map by prefix
+    def load(path):
+        with open(path, newline='') as fh:
+            return [r for r in csv.DictReader(fh)
+                    if r.get('study', '') and not r['study'].startswith('#')]
+    r1, r2 = load(f1), load(f2)
+    if not r1 or not r2:
+        sys.exit("No QA rows found in one or both rater files.")
+    print(f"QA agreement over n={min(len(r1),len(r2))} studies (quadratic-weighted):")
+    ks = []
+    for c in crits:
+        col1 = next((h for h in r1[0] if h.startswith(c)), None)
+        col2 = next((h for h in r2[0] if h.startswith(c)), None)
+        if not col1 or not col2:
+            print(f"  {c}: column not found, skipping"); continue
+        a = [str(x[col1]).strip() for x in r1]
+        b = [str(x[col2]).strip() for x in r2]
+        kappa, raw = cohen_kappa(a, b, weights='quadratic')
+        ks.append(kappa)
+        print(f"  {c}: kappa_w = {kappa:.3f}  (raw {raw*100:.0f}%)")
+    if ks:
+        print(f"  ----  mean kappa_w = {sum(ks)/len(ks):.3f}, "
+              f"range {min(ks):.3f}-{max(ks):.3f}")
 
 if __name__ == '__main__':
     main()

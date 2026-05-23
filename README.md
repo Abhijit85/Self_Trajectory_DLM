@@ -11,8 +11,10 @@ kit. Current counts are:
 - `1,595` imported records from arXiv, Semantic Scholar, OpenReview, and ACL
   Anthology.
 - `1,168` unique records after deduplication and removal of prior IEEE/ACM
-  template rows.
-- `748` records retained for human full-text curation.
+  template records.
+- `415` records excluded by automated title/abstract pre-screening.
+- `753` records retained for human full-text curation.
+- `729` records excluded during human full-text curation.
 - `24` final human-coded primary studies.
 
 IEEE Xplore and ACM Digital Library were searched manually because public API or
@@ -36,14 +38,14 @@ The main audit trail is in [`repro_kit/`](repro_kit/):
 
 - [`repro_kit/search/query_log.csv`](repro_kit/search/query_log.csv): source queries, run dates, hit counts, and source-status notes.
 - [`repro_kit/extraction/search_log.csv`](repro_kit/extraction/search_log.csv): reconciled funnel summary for the linked repository audit trail.
-- [`repro_kit/screening/screening_sheet.csv`](repro_kit/screening/screening_sheet.csv): 1,168 imported unique records plus 24 final-corpus short identifiers.
+- [`repro_kit/screening/screening_sheet.csv`](repro_kit/screening/screening_sheet.csv): 1,168 imported unique records; 24 rows are marked `included_final=yes` and linked to the final extraction by `source_record_id`.
 - [`repro_kit/extraction/extraction_matrix.csv`](repro_kit/extraction/extraction_matrix.csv): final 24 human-coded primary studies.
 - [`repro_kit/quality/qa_rater1.csv`](repro_kit/quality/qa_rater1.csv) and [`repro_kit/quality/qa_rater2.csv`](repro_kit/quality/qa_rater2.csv): independent human QA ratings for the 24 final studies.
 - [`repro_kit/quality/qa_rubric.md`](repro_kit/quality/qa_rubric.md): QA1-QA8 scoring rubric.
 - [`repro_kit/protocol.md`](repro_kit/protocol.md): dated review protocol and current source-status caveats.
 - [`scripts/run_searches.py`](scripts/run_searches.py): public/API search runner.
 
-Use the final 24-row extraction and QA files as the human-coded study corpus. The 748 full-text-retained count remains part of the funnel, not the final corpus.
+Use the final 24-row extraction and QA files as the human-coded study corpus. The 753 full-text-retained count remains part of the funnel, not the final corpus.
 
 ## Double-Blind Use
 
