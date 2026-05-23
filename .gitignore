@@ -1,3 +1,7 @@
 repro_kit/crosscheck_outputs/
 repro_kit/README.md
 .env
+__pycache__/
+*.pyc
+sep_dlm/results/
+sep_dlm/figs/

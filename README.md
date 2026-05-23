@@ -3,87 +3,48 @@
 This repository contains reproducibility materials for a systematic literature
 review of trajectory self-feedback in diffusion language models.
 
-<!-- ## Review Status -->
+## Review Audit Status
 
-<!-- This repository is currently a reproducibility-kit scaffold. It is safe to use
-as the audit structure for the review, but the included CSVs should not be cited
-as final SLR evidence until the real search, screening, extraction, and
-independent quality-rating work has been completed.
+The repository audit trail is the source of truth for the linked reproducibility
+kit. Current counts are:
 
-Known fields still to complete:
+- `1,595` imported records from arXiv, Semantic Scholar, OpenReview, and ACL
+  Anthology.
+- `1,168` unique records after deduplication and removal of prior IEEE/ACM
+  template rows.
+- `748` records retained for human full-text curation.
+- `24` final human-coded primary studies.
 
-- `repro_kit/search/query_log.csv` records the current failed public/API run:
-  arXiv failed after retry/backoff and Semantic Scholar per-phrase search was
-  blocked by HTTP 429 on 2026-05-21.
-- OpenReview, ACL Anthology, IEEE Xplore, and ACM Digital Library still require
-  manual or authenticated exports.
-- `repro_kit/screening/screening_sheet.csv` has no screenable records until
-  valid exports are saved.
-- `repro_kit/quality/qa_rater1.csv` and `repro_kit/quality/qa_rater2.csv`
-  are empty until two real independent ratings are entered.
-- `repro_kit/extraction/extraction_matrix.csv` is empty until consensus
-  extraction is completed for genuinely included papers. -->
+IEEE Xplore is recorded as an HTTP 403 access failure and should be reported as
+a search-access threat to validity. ACM Digital Library is recorded as a manual
+count of `45`, but no ACM export is included or imported into the deduplicated
+screening set. The extraction and QA CSVs now contain the final 24 human-coded
+primary studies.
 
-<!-- ## Repository Contents
+## SEP-DLM Scaffold
+
+The runnable SEP-DLM diagnostic scaffold is in [`sep_dlm/`](sep_dlm/). It can
+write CI(t) and CCap CSVs with bootstrap confidence intervals, includes adapter
+stubs for discrete and continuous checkpoints, and provides a harness check for
+the H_wall trajectory shape before real checkpoint results are produced. Do not
+commit or report harness-check CSVs; Section 7.4 should use only CSVs generated
+from real checkpoint adapters.
+
+## Repository Contents
 
 The main audit trail is in [`repro_kit/`](repro_kit/):
 
-- [`repro_kit/search/query_log.csv`](repro_kit/search/query_log.csv): search
-  queries, sources, run dates, and hit counts.
-- [`repro_kit/screening/screening_sheet.csv`](repro_kit/screening/screening_sheet.csv):
-  title/abstract and full-text screening decisions.
-- [`repro_kit/quality/qa_rubric.md`](repro_kit/quality/qa_rubric.md):
-  QA1-QA8 scoring rubric and calibration notes.
-- [`repro_kit/quality/compute_kappa.py`](repro_kit/quality/compute_kappa.py):
-  helper script for inter-rater agreement.
-- [`repro_kit/extraction/extraction_matrix.csv`](repro_kit/extraction/extraction_matrix.csv):
-  final per-study extraction matrix.
-- [`repro_kit/extraction/search_log.csv`](repro_kit/extraction/search_log.csv):
-  funnel summary by source, stage, and exclusion reason.
-- [`repro_kit/PRISMA_map.md`](repro_kit/PRISMA_map.md): PRISMA 2020 item map.
-- [`repro_kit/protocol.md`](repro_kit/protocol.md): dated review protocol.
-- [`repro_kit/PRISMA_2020_checklist.pdf`](repro_kit/PRISMA_2020_checklist.pdf):
-  draft PRISMA checklist PDF.
-- [`scripts/run_searches.py`](scripts/run_searches.py): public/API search runner
-  for sources that can be queried without a manual export.
-- [`repro_kit/search/manual_export_instructions.md`](repro_kit/search/manual_export_instructions.md):
-  exact instructions for the four sources that require manual or authenticated
-  exports.
-- [`repro_kit/crosscheck_outputs/`](repro_kit/crosscheck_outputs/): AI
-  cross-check outputs for format validation and human-reviewer comparison only.
+- [`repro_kit/search/query_log.csv`](repro_kit/search/query_log.csv): source queries, run dates, hit counts, and source-status notes.
+- [`repro_kit/extraction/search_log.csv`](repro_kit/extraction/search_log.csv): reconciled funnel summary for the linked repository audit trail.
+- [`repro_kit/screening/screening_sheet.csv`](repro_kit/screening/screening_sheet.csv): 1,168 imported unique records plus 24 final-corpus short identifiers.
+- [`repro_kit/extraction/extraction_matrix.csv`](repro_kit/extraction/extraction_matrix.csv): final 24 human-coded primary studies.
+- [`repro_kit/quality/qa_rater1.csv`](repro_kit/quality/qa_rater1.csv) and [`repro_kit/quality/qa_rater2.csv`](repro_kit/quality/qa_rater2.csv): independent human QA ratings for the 24 final studies.
+- [`repro_kit/quality/qa_rubric.md`](repro_kit/quality/qa_rubric.md): QA1-QA8 scoring rubric.
+- [`repro_kit/protocol.md`](repro_kit/protocol.md): dated review protocol and current source-status caveats.
+- [`scripts/run_searches.py`](scripts/run_searches.py): public/API search runner.
 
-## Auditing The Central Claim
-
-After replacing the template data with completed review data:
-
-1. Open [`repro_kit/extraction/extraction_matrix.csv`](repro_kit/extraction/extraction_matrix.csv).
-2. Filter for rows where `QA5_faithfulness == 1`.
-3. Check whether any of those rows also vary the trajectory self-feedback
-   mechanism with `operator_family != none`.
-4. The stated claim is falsified if that intersection is non-empty.
-
-## Inter-Rater Agreement
-
-Run the quality agreement calculation from the repository root:
-
-```bash
-python3 repro_kit/quality/compute_kappa.py --mode qa \
-  repro_kit/quality/qa_rater1.csv \
-  repro_kit/quality/qa_rater2.csv
-```
-
-Run screening agreement with:
-
-```bash
-python3 repro_kit/quality/compute_kappa.py --mode screening \
-  repro_kit/screening/screening_sheet.csv
-```
-
-Do not report the output from the template files as study results. Re-run these
-commands after the real independent coding and screening data are in place.
+Use the final 24-row extraction and QA files as the human-coded study corpus. The 748 full-text-retained count remains part of the funnel, not the final corpus.
 
 ## Double-Blind Use
 
-Do not cite a named GitHub repository during double-blind review. Use an
-anonymous.4open.science mirror or an anonymized OSF view-only link for review,
-then move the finalized artifacts to a named repository for camera-ready release. -->
+Do not cite a named GitHub repository during double-blind review. Use an anonymous.4open.science mirror or an anonymized OSF view-only link for review, then move finalized artifacts to a named repository for camera-ready release.

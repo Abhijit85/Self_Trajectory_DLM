@@ -1,0 +1,14 @@
+# SEP-DLM diagnostics config (fixed for reproducibility)
+seed: 0
+steps: 256            # many-step regime; also run 32 and 8 per the agenda (§7.4)
+n_seeds: 200          # >=200 paired seeds (Appendix D)
+ci:
+  t_grid: [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
+  discrete_perturbation_kl_nats: 0.5      # logit-space, target per-token KL
+  continuous_perturbation_frac: 0.1       # x per-dim activation std
+  edit_distance: token_levenshtein        # primary; add semantic_embedding as secondary
+ccap:
+  eps_grid: [0.05, 0.1, 0.2]
+  K_grid: [4, 8, 16]
+  corruption_families: [lexical, semantic]
+  bootstrap_iters: 2000

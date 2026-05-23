@@ -331,7 +331,7 @@ def build():
         ("screening", "retained for full-text retrieval", len(included)),
         ("fulltext_exclusion", "full-text exclusions pending", ""),
         ("inclusion", "included from completed-source screen", len(included)),
-        ("inclusion", "FINAL primary studies pending human validation", len(included)),
+        ("inclusion", "FINAL primary studies require human-curated corpus file", ""),
     ]
     for code, count in sorted(excl_counts.items()):
         if code != "included":

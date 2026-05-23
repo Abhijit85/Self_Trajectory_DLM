@@ -1,17 +1,22 @@
 # Reliability Summary
 
-Screening agreement over 1,244 records:
+Screening agreement over 1,192 screening-sheet rows:
 
 - Cohen's kappa: 0.996
 - Raw agreement: 99.8%
 
-Quality-assessment agreement over 815 studies:
+Quality-assessment agreement over 24 final human-coded primary studies
+(quadratic-weighted):
 
-- Mean quadratic-weighted kappa: 0.906
-- Range: 0.357-1.000
-- Lowest-agreement criterion: QA3 ablation, kappa_w = 0.357, raw agreement = 64%
+- QA1: kappa_w = 1.000 (raw 100%)
+- QA2: kappa_w = 1.000 (raw 100%)
+- QA3: kappa_w = 0.579 (raw 67%)
+- QA4: kappa_w = 1.000 (raw 100%)
+- QA5: kappa_w = 1.000 (raw 100%)
+- QA6: kappa_w = 1.000 (raw 100%)
+- QA7: kappa_w = 0.558 (raw 75%)
+- QA8: kappa_w = 1.000 (raw 100%)
 
-QA3 remained the weakest criterion after incorporating the IEEE/ACM rows. The
-review should acknowledge weaker agreement on whether a study isolates the
-trajectory self-feedback effect, then report that disagreements were reconciled
-to consensus before values were written to `extraction/extraction_matrix.csv`.
+Mean kappa_w = 0.892; range = 0.558-1.000. QA3 and QA7 remained the
+lowest-agreement criteria and should be described as reconciled by consensus
+before final values were written to `extraction/extraction_matrix.csv`.

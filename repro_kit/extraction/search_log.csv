@@ -1,22 +1,13 @@
 stage,detail,count
-identification,arXiv,635
-identification,Semantic Scholar,491
-identification,OpenReview,413
-identification,ACL Anthology,56
-identification,IEEE Xplore,47
-identification,ACM Digital Library,43
-identification,TOTAL raw records,1685
-deduplication,unique records after deduplication,1244
-screening,excluded at title/abstract,429
-screening,retained for full-text retrieval,815
-fulltext_exclusion,not a diffusion/flow text model (EC1/EC2),227
-fulltext_exclusion,no self-feedback/trajectory relevance,205
-fulltext_exclusion,image/audio/video diffusion only (EC1),129
-fulltext_exclusion,non-archival or superseded (EC3/EC4),151
-fulltext_exclusion,full text unavailable,32
-fulltext_exclusion,out-of-scope application,54
-fulltext_exclusion,TOTAL excluded at full text,798
-inclusion,included from database search,17
-inclusion,added by backward/forward snowballing,6
-inclusion,added by corpus refresh,1
-inclusion,FINAL primary studies,24
+identification,arXiv imported records,635
+identification,Semantic Scholar imported records,491
+identification,OpenReview imported records,413
+identification,ACL Anthology imported records,56
+identification,IEEE Xplore access failure (HTTP 403; imported records),0
+identification,ACM Digital Library manual count (not imported),45
+identification,TOTAL imported records used for deduplication,1595
+deduplication,unique imported records after deduplication and removal of fabricated IEEE/ACM template records,1168
+screening,excluded at title/abstract screening,420
+screening,retained for human full-text curation,748
+fulltext_exclusion,excluded at human full text,724
+inclusion,FINAL human-coded primary studies,24

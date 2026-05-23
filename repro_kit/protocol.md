@@ -25,9 +25,12 @@ mechanism changes.
 
 ## Information Sources
 
-Searches are planned for arXiv, Semantic Scholar, OpenReview, ACL Anthology,
+Searches are recorded for arXiv, Semantic Scholar, OpenReview, ACL Anthology,
 IEEE Xplore, and ACM Digital Library. Exact query strings, run dates, raw hit
-counts, and export paths are recorded in `search/query_log.csv`.
+counts, and export paths are recorded in `search/query_log.csv`. IEEE Xplore
+returned HTTP 403 and contributed no imported records. ACM Digital Library has
+a manual hit count of 45, but no ACM export is included in this repository and
+no ACM records are imported into the deduplicated screening set.
 
 ## Eligibility Criteria
 
@@ -42,16 +45,17 @@ or out-of-scope applications.
 
 ## Screening Procedure
 
-Two screeners independently code title/abstract decisions as `include` or
-`exclude` in `screening/screening_sheet.csv`. Disagreements are reconciled
-before full-text screening. Full-text exclusions must include an exclusion code
-from the sheet's column guide.
+The `screening/screening_sheet.csv` records 1,168 unique imported records, 420
+title/abstract exclusions, 748 records retained for human full-text curation,
+and the final 24-study human-coded corpus.
 
 ## Quality Assessment
 
-Two raters independently score included studies with `quality/qa_rubric.md`.
-Inter-rater agreement is computed with `quality/compute_kappa.py`. Consensus
-scores are then written into `extraction/extraction_matrix.csv`.
+The current `quality/qa_rater*.csv` and `extraction/extraction_matrix.csv`
+contain the final 24 human-coded primary studies. Two reviewer profiles are
+preserved in `quality/reviewer_a_mechanism_reviews.csv` and
+`quality/reviewer_b_evidence_reviews.csv`; agreement statistics are summarized
+in `quality/reliability_summary.md`.
 
 ## Extraction Fields
 

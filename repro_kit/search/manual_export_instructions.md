@@ -1,8 +1,9 @@
 # Manual Export Instructions
 
-Run these searches on the same date as the review search, save the raw export
-files at the paths listed in `query_log.csv`, and then enter the raw hit counts
-in that file.
+Run these searches on the same date as the review search, save any available raw
+export files at the paths listed in `query_log.csv`, and then enter the raw hit
+counts in that file. If a source cannot be exported, record the failure rather
+than substituting template rows.
 
 Use this Boolean query unless the database syntax requires minor escaping:
 
@@ -26,12 +27,13 @@ Use this Boolean query unless the database syntax requires minor escaping:
 ## IEEE Xplore
 
 - Scope: metadata and abstract fields, 2021-2026.
-- Export path: `search/exports/ieee.csv`.
-- Save the platform CSV export without editing.
+- Current status: HTTP 403 access failure.
+- Export path: none until access is restored.
+- Report as a search-access threat to validity; do not create replacement rows.
 
 ## ACM Digital Library
 
 - Scope: metadata and abstract fields, 2021-2026.
-- Export path: `search/exports/acm.bib`.
-- Save the raw BibTeX export without editing.
-
+- Current status: manual count only, `45`.
+- Export path: none in this repository.
+- Do not import ACM records unless a real platform export is saved.
