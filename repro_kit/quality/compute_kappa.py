@@ -3,15 +3,18 @@
 Compute inter-rater agreement for the SLR.
 
 Usage:
-  # Screening agreement (binary include/exclude) from screening_sheet.csv:
+  # Screening agreement (binary include/exclude) from screening_sheet.csv.
+  # Use only when ta_screener1/ta_screener2 are true independent human labels:
   python compute_kappa.py --mode screening ../screening/screening_sheet.csv
 
   # QA agreement (ordinal 0/0.5/1) from two QA score files with matching study order:
   python compute_kappa.py --mode qa qa_rater1.csv qa_rater2.csv
 
 Reports Cohen's kappa (screening: unweighted; QA: quadratic-weighted, appropriate
-for ordinal scores) and raw percent agreement. Falls back to a pure-python
-implementation if scikit-learn is not installed.
+for ordinal scores) and raw percent agreement. The repository's current
+title/abstract stage is an automated pre-screen, so no human screening kappa is
+reported from it. Falls back to a pure-python implementation if scikit-learn is
+not installed.
 """
 import argparse, csv, sys
 
@@ -47,6 +50,10 @@ def main():
     args = ap.parse_args()
 
     if args.mode == 'screening':
+        print("NOTE: Use screening mode only for true independent human labels.")
+        print("The current repository screening sheet is an automated pre-screen;")
+        print("do not report this output as human screening reliability unless")
+        print("ta_screener1 and ta_screener2 have been replaced by human coders.")
         path = args.files[0]
         with open(path, newline='') as f:
             rows = [r for r in csv.DictReader(f)

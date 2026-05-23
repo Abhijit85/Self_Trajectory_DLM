@@ -1,12 +1,10 @@
 # Reliability Summary
 
-Screening agreement over 1,192 screening-sheet rows:
+Screening stage: automated title/abstract pre-screen; no human screening kappa
+is reported.
 
-- Cohen's kappa: 0.996
-- Raw agreement: 99.8%
-
-Quality-assessment agreement over 24 final human-coded primary studies
-(quadratic-weighted):
+Quality-assessment agreement over 24 final human-coded primary studies:
+mean quadratic-weighted kappa = 0.892, range 0.558-1.000.
 
 - QA1: kappa_w = 1.000 (raw 100%)
 - QA2: kappa_w = 1.000 (raw 100%)
