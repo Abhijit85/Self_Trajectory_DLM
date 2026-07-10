@@ -1,1 +1,13 @@
 matplotlib>=3.8
+
+# Core (mock pipeline needs only numpy)
+numpy>=1.24
+
+# Real LLaDA run
+torch>=2.1
+transformers>=4.44
+datasets>=2.19
+
+# Optional quality metrics
+# mauve-text>=0.4        # MAUVE distributional quality
+# spacy>=3.7             # NER-based semantic corruption (python -m spacy download en_core_web_sm)

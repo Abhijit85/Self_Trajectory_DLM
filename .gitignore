@@ -5,3 +5,5 @@ __pycache__/
 *.pyc
 sep_dlm/results/
 sep_dlm/figs/
+.venv/
+sep_dlm/out_*/

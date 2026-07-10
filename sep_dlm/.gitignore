@@ -2,3 +2,4 @@ results/
 figs/
 __pycache__/
 *.pyc
+out_*/
